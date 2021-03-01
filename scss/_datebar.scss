@@ -1,0 +1,44 @@
+.datebar {
+  background: $gray-lightest;
+  box-sizing: border-box;
+  color: $gray-dim;
+  display: flex;
+  line-height: $line-height-base;
+  width: 100%;
+  z-index: 100;
+
+  .datebar-header {
+    display: flex;
+    padding: $spacer .9rem $spacer $spacer;
+    position: relative;
+    top: 1px;
+    width: 100%;
+  }
+
+  .date-icon {
+    font-size: 1.8rem;
+    height: $spacer * 2;
+    margin-right: .9rem;
+    position: relative;
+  }
+
+  .current-date-title {
+    font-size: 1.6rem;
+    font-weight: $font-weight-bold;
+    height: $spacer * 2;
+  }
+
+  .current-date-status {
+    color: $secondary-text-color;
+    margin-left: .9rem;
+  }
+
+  .current-date-cost {
+  }
+
+  .datebar-controls {
+    display: flex;
+    margin-left: auto;
+    padding: $spacer .9rem;
+  }
+}

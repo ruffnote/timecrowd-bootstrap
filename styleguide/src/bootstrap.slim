@@ -1,0 +1,448 @@
+doctype html
+html lang='ja'
+  head
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    link rel='stylesheet' href='./assets/service.css'
+    link rel='stylesheet' href='./assets/styleguide.css'
+  body
+    .container
+      section.gd-section
+        h2.gd-title タイポグラフィ
+        h3.gd-header ヘッダー
+        .gd-block
+          .row
+            .col-6.gd-col
+              h1 h1 heading
+              h2 h2 heading
+              h3 h3 heading
+              h4 h4 heading
+              h5 h5 heading
+              h6 h6 heading
+            .col-6.gd-col
+              h3
+                | Fancy display heading
+              small.text-muted With faded secondary text
+        h3.gd-header パラグラフ
+        .gd-block
+          .row
+            .col-6
+              p.lead
+                | リード文
+              p 
+                | Lorem ipsum...
+
+      section.gd-section
+        h2.gd-title Table
+        h3.gd-header Default
+        .gd-block
+          .row
+            .col-12
+              table.table
+                thead
+                  tr
+                    th #
+                    th First Name
+                    th Last Name
+                    th Username
+                tbody
+                  tr
+                    th scope="row"  1
+                    td Mark
+                    td Otto
+                    td @mdo
+                  tr
+                    th scope="row"  2
+                    td Jacob
+                    td Thornton
+                    td @fat
+                  tr
+                    th scope="row"  3
+                    td Larry
+                    td the Bird
+                    td @twitter
+
+        h3.gd-header パラグラフ
+        .gd-block
+          .row
+            .col-6
+              p.lead
+                | リード文
+              p 
+                | Lorem ipsum...
+                
+        section.gd-section
+          h2.gd-title ボタン
+          h3.gd-header カラー
+          .row
+            .col
+              .gd-block
+                span.btn.btn-primary.btn-md 
+                  i.fa.fa-link.btn-icon
+                  span.btn-text
+                    | Primary
+                span.btn.btn-secondary.btn-md secondary
+                span.btn.btn-success.btn-md success
+                span.btn.btn-info.btn-md info
+                span.btn.btn-warning.btn-md warning
+                span.btn.btn-danger.btn-md danger
+              h3.gd-header アウトライン
+              .gd-block
+                span.btn.btn-outline-primary primary
+                span.btn.btn-outline-secondary secondary
+                span.btn.btn-outline-success success
+                span.btn.btn-outline-info info
+                span.btn.btn-outline-warning warning
+                span.btn.btn-outline-danger danger
+              h3.gd-header サイズ
+              .gd-block
+                span.btn.btn-primary.btn-lg
+                  i.fa.fa-link.btn-icon
+                  span.btn-text
+                    | Large
+                span.btn.btn-primary.btn-md
+                  i.fa.fa-link.btn-icon
+                  span.btn-text
+                    | Medium
+                span.btn.btn-primary.btn-sm
+                  i.fa.fa-link.btn-icon
+                  span.btn-text
+                    | Small
+              h3.gd-header タイプ
+              .gd-block
+                a.btn.btn-primary.active href="#" role="button" Active
+                a.btn.btn-secondary.active href="#" role="button"  Active Secondary
+                span.btn.btn-primary.btn-md.disabled Disabled
+                span.btn.btn-link.btn-md Button Link
+      section.gd-section
+        h2.gd-title ボタングループ
+        h3.gd-header 表示
+        .gd-block
+          .row
+            .col
+              .btn-toolbar aria-label=("Toolbar with button groups") role="toolbar" 
+                .btn-group aria-label=("First group") role="group" 
+                  button.btn.btn-secondary type="button"  1
+                  button.btn.btn-secondary type="button"  2
+                  button.btn.btn-secondary type="button"  3
+                  button.btn.btn-secondary type="button"  4
+                .btn-group aria-label=("Second group") role="group" 
+                  button.btn.btn-secondary type="button"  5
+                  button.btn.btn-secondary type="button"  6
+                  button.btn.btn-secondary type="button"  7
+                .btn-group aria-label=("Third group") role="group" 
+                  button.btn.btn-secondary type="button"  8
+        h3.gd-header ドロップダウン
+        .gd-block
+          .row
+            .col
+              .btn-group aria-label=("Button group with nested dropdown") role="group" 
+                button.btn.btn-secondary type="button"  1
+                button.btn.btn-secondary type="button"  2
+                .btn-group role="group" 
+                  button#btnGroupDrop1.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+                    | Dropdown
+                  .dropdown-menu aria-labelledby="btnGroupDrop1" 
+                    a.dropdown-item href="#"  Dropdown link
+                    a.dropdown-item href="#"  Dropdown link
+
+      section.gd-section
+        h2.gd-title フォーム
+        h3.gd-header 標準フォーム
+        .gd-block
+          .row
+            .col
+              form
+                .form-group.row
+                  label.col-sm-2.col-form-label for="inputEmail3"  Email
+                  .col-sm-10
+                    input#inputEmail3.form-control placeholder="Email" type="email" /
+                .form-group.row
+                  label.col-sm-2.col-form-label for="inputPassword3"  Password
+                  .col-sm-10
+                    input#inputPassword3.form-control placeholder="Password" type="password" /
+                fieldset.form-group.row
+                  legend.col-form-legend.col-sm-2 Radios
+                  .col-sm-10
+                    .form-check
+                      label.form-check-label
+                        input#gridRadios1.form-check-input checked="" name="gridRadios" type="radio" value="option1" /
+                        | Option one is this and that&mdash;be sure to include why it's great
+                    .form-check
+                      label.form-check-label
+                        input#gridRadios2.form-check-input name="gridRadios" type="radio" value="option2" /
+                        | Option two can be something else and selecting it will deselect option one
+                    .form-check.disabled
+                      label.form-check-label
+                        input#gridRadios3.form-check-input disabled="" name="gridRadios" type="radio" value="option3" /
+                        | Option three is disabled
+                .form-group.row
+                  label.col-sm-2 Checkbox
+                  .col-sm-10
+                    .form-check
+                      label.form-check-label
+                        input.form-check-input type="checkbox" /
+                        | Check me out
+                .form-group.row
+                  .offset-sm-2.col-sm-10
+                    button.btn.btn-primary type="submit"  Sign in
+                    
+        h3.gd-header サイズ＆インライン
+        .gd-block
+          .row
+            .col
+              input.form-control.form-control-lg placeholder=".form-control-lg" type="text" /
+              input.form-control placeholder=("Default input") type="text" /
+              input.form-control.form-control-sm placeholder=".form-control-sm" type="text" /
+          .row
+            .col
+              .form-check.form-check-inline
+                label.form-check-label
+                  input#inlineCheckbox1.form-check-input type="checkbox" value="option1" /
+                  | 1
+              .form-check.form-check-inline
+                label.form-check-label
+                  input#inlineCheckbox2.form-check-input type="checkbox" value="option2" /
+                  | 2
+              .form-check.form-check-inline.disabled
+                label.form-check-label
+                  input#inlineCheckbox3.form-check-input disabled="" type="checkbox" value="option3" /
+                  | 3
+
+        h3.gd-header カスタムフォーム
+        .gd-block
+          .row
+            .col
+              .form-group
+                label.c-input.c-checkbox
+                  input type="checkbox" /
+                  span.c-indicator
+                  | Check this custom checkbox
+              .form-group
+                label.c-input.c-radio
+                  input#radio1 name="radio" type="radio" /
+                  span.c-indicator
+                  | Toggle this custom radio
+                label.c-input.c-radio
+                  input#radio2 name="radio" type="radio" /
+                  span.c-indicator
+                  | Or toggle this other custom radio
+              .form-group
+                .c-inputs-stacked
+                  label.c-input.c-radio
+                    input#radioStacked1 name="radio-stacked" type="radio" /
+                    span.c-indicator
+                    | Toggle this custom radio
+                  label.c-input.c-radio
+                    input#radioStacked2 name="radio-stacked" type="radio" /
+                    span.c-indicator
+                    | Or toggle this other custom radio
+              .form-group
+                select.c-select
+                  option selected=""  Open this select menu
+                  option value="1"  One
+                  option value="2"  Two
+                  option value="3"  Three
+              .form-group
+                label.file
+                  input#file type="file" /
+                  span.file-custom
+
+        h3.gd-header インプットグループ
+        .gd-block
+          .row
+            .col                  
+              .input-group
+                span#basic-addon1.input-group-addon @
+                input.form-control aria-describedby="basic-addon1" placeholder="Username" type="text" /
+              br/
+              .input-group
+                input.form-control aria-describedby="basic-addon2" placeholder=("Recipient's username") type="text" /
+                span#basic-addon2.input-group-addon @example.com
+              br/
+              label for="basic-url"  Your vanity URL
+              .input-group
+                span#basic-addon3.input-group-addon https://example.com/users/
+                input#basic-url.form-control aria-describedby="basic-addon3" type="text" /
+              br/
+              .input-group
+                span.input-group-addon $
+                input.form-control aria-label=("Amount (to the nearest dollar)") type="text" /
+                span.input-group-addon .00
+              br/
+              .input-group
+                .input-group-btn
+                  button.btn.btn-secondary type="button"  Action
+                  button.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+                    span.sr-only Toggle Dropdown
+                  .dropdown-menu
+                    a.dropdown-item href="#"  Action
+                    a.dropdown-item href="#"  Another action
+                    a.dropdown-item href="#"  Something else here
+                    .dropdown-divider role="separator" 
+                    a.dropdown-item href="#"  Separated link
+                input.form-control aria-label=("Text input with segmented button dropdown") type="text" /
+              br/
+              .input-group
+                .input-group-btn.drawer
+                  button.btn.btn-secondary type="button"  Drawer Button
+                input.form-control aria-label=("Text input with segmented button dropdown") type="text" /
+                button.btn.btn-primary type="button"
+                  | Primary
+
+      section.gd-section
+        h2.gd-title アラート
+        h3.gd-header アラート
+        .gd-block
+          .row
+            .col                
+              .alert.alert-success role="alert" 
+                strong Well done!
+                | You successfully read
+                a.alert-link href="#"  this important alert message
+              .alert.alert-info role="alert" 
+                strong Heads up!
+                | This
+                a.alert-link href="#"  
+                  | alert needs your attention
+                  | but it's not super important.
+              .alert.alert-warning role="alert" 
+                strong Warning!
+                | Better check yourself, you're
+                a.alert-link href="#"  
+                  | not looking too good
+              .alert.alert-danger role="alert" 
+                strong Oh snap!
+                a.alert-link href="#"  
+                  | Change a few things up
+                  | and try submitting again.
+                  
+      section.gd-section
+        h2.gd-title Nav
+        h3.gd-header .nav-tabs
+        .gd-block
+          .row
+            .col 
+              ul.nav.nav-tabs
+                li.nav-item
+                  a.nav-link.active href="#"  Active
+                li.nav-item
+                  a.nav-link href="#"  Link
+                li.nav-item
+                  a.nav-link href="#"  Another link
+                li.nav-item
+                  a.nav-link.disabled href="#"  Disabled
+
+        h3.gd-header .nav-pills
+        .gd-block
+          .row
+            .col 
+              ul.nav.nav-pills
+                li.nav-item
+                  a.nav-link.active href="#"  Active
+                li.nav-item
+                  a.nav-link href="#"  Link
+                li.nav-item
+                  a.nav-link href="#"  Another link
+                li.nav-item
+                  a.nav-link.disabled href="#"  Disabled
+
+      section.gd-section
+        h2.gd-title List Group
+        h3.gd-header with label and state
+        .gd-block
+          .row
+            .col                   
+              ul.list-group
+                li.list-group-item
+                  | Cras justo odio 
+                  span.badge.badge-warning 14
+                li.list-group-item.active 
+                  | Dapibus ac facilisis in 
+                  span.badge.badge-info 2
+                li.list-group-item 
+                  | Morbi leo risus 
+                  span.badge.badge-danger.badge-pill 1
+
+      section.gd-section
+        h2.gd-title Badge
+        h3.gd-header Badges
+        .gd-block
+          .row
+            .col
+              h1
+                | Example heading 
+                span.badge.badge-default Default
+              h2
+                | Example heading 
+                span.badge.badge-primary Primary
+              h3
+                | Example heading 
+                span.badge.badge-info Success
+              h4
+                | Example heading 
+                span.badge.badge-info Info
+              h5
+                | Example heading 
+                span.badge.badge-warning Warning
+              h6
+                | Example heading 
+                span.badge.badge-danger Danger
+                
+      section.gd-section
+        h2.gd-title アバター
+        h3.gd-header .avatar
+        .gd-block
+          .row
+            .col
+              span.avatar
+                img src="https://placekitten.com/140/140"
+              span.avatar
+                img src="https://placekitten.com/160/160"
+              span.avatar
+                img src="https://placekitten.com/180/180"
+        h3.gd-header .avatar-sm / .avatar-lg
+        .gd-block
+          .row
+            .col
+              span.avatar.avatar-sm
+                img src="https://placekitten.com/140/140"
+              span.avatar.avatar-sm
+                img src="https://placekitten.com/160/160"
+              span.avatar.avatar-sm
+                img src="https://placekitten.com/180/180"
+          .row
+            .col
+              span.avatar.avatar-lg
+                img src="https://placekitten.com/210/210"
+              span.avatar.avatar-lg
+                img src="https://placekitten.com/240/240"
+              span.avatar.avatar-lg
+                img src="https://placekitten.com/290/290"
+        h3.gd-header contextual .avatar
+        .gd-block
+          .row
+            .col
+              span.avatar.avatar-sm.avatar-info
+                img src="https://placekitten.com/140/140"
+                .avatar-status
+                  i.fa.fa-tint
+              span.avatar.avatar-warning
+                img src="https://placekitten.com/160/160"
+                .avatar-status
+                  i.fa.fa-bolt
+              span.avatar.avatar-lg.avatar-danger
+                img src="https://placekitten.com/180/180"
+                  
+      section.gd-section
+        h2.gd-title ローディング
+        h3.gd-header .loading
+        .gd-block
+          .row
+            .col
+              span.loading
+
+
+
+
+            

@@ -1,0 +1,383 @@
+doctype html
+html lang='ja'
+  head
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    title TimeCrowd - タイムクラウドはチームでの時間を共有し生産性を高めるためのツールです
+    meta name='description' content='時間を共有すると嬉しい事が増える - 未来、現在、過去。タイムクラウドはチームでの時間を共有し生産性を高めるためのツールです'
+    link rel='stylesheet' href='./assets/promotion.css'
+    link rel='stylesheet' href='./assets/styleguide.css'
+    meta property='og:title' content='TimeCrowd'
+    meta property='og:type' content='website'
+    meta property='og:url' content='https://timecrowd.net'
+    meta property='og:image' content='./assets/tc-ogp.png'
+    meta property='og:site_name'  content='https://timecrowd.net'
+    meta property='og:description' content='時間を共有すると嬉しい事が増える - 未来、現在、過去。タイムクラウドはチームでの時間を共有し生産性を高めるためのツールです'
+  body
+    nav.navbar.navbar-toggleable-md.navbar-light.fixed-top
+      .container.d-flex
+        a.navbar-brand href="#"
+          img.logo src="./assets/tc-logo-horizontal-web.svg" alt="TimeCrowd"
+        #navbarNav.d-flex-right
+          ul.nav.navbar-nav.d-none-sp
+            /li.nav-item
+              a.nav-link href="#" 機能一覧
+            li.nav-item
+              a.nav-link target="_blank" href="http://chatwork.com/timecrowd" 
+                img.company-icon src="./assets/chatwork-logo-nontext.svg" alt="ChatWork"
+                | ChatWorkでサポート
+            li.nav-item.nav-item-separator
+              a.nav-link href="#" ログイン
+            li.nav-item.nav-item-primary
+              a.nav-link href="#" 無料で試す
+        .d-none-sm
+          a.btn.btn-secondary.btn-sm href="#" ログイン
+          a.btn.btn-primary.btn-sm href="#" 試す
+            
+    .news-ticker
+      .container
+        .row.justify-content-end
+          .news-ticker-body.col-md-7.text-right
+            .news-info
+              span.news-date 2017-03-01
+              span.news-title
+                a href="promotion-news1.html" 全てのデザインを刷新しました。
+              a.d-flex-right href="#" 
+                | 過去
+                span.d-none-sp
+                  | のニュース
+    .jumbotron.jumbotron-fluid
+      .container
+        .row
+          .col-12.text-center
+            h1.display-2
+              span
+                | 時間を共有
+              | すると
+              span
+                | 嬉しい事
+              | が増える
+            p.display-3
+              | 未来、現在、過去。
+              br
+              | タイムクラウドはチームでの時間を共有し
+              br
+              | 生産性を高めるためのツールです。
+            .mt-4.mb-5.text-center
+              a.btn.btn-primary.btn-lg.btn-rounded.btn-conversion.mb-2 href="#" 無料で試す
+              p.text-xs
+                | ※Googleアカウントでログインします。
+                br
+                | ログインした場合、 
+                a.jumbotron-link href='https://timecrowd.net/terms' target='_blank' 利用規約 
+                | に同意したとみなします。 
+              br
+              img.store-badge alt='AppStore' src='https://timecrowd-assets.s3-ap-northeast-1.amazonaws.com/assets/top/appstore-dc142c130a7108e89c25a359266dddcc.svg'
+              img.store-badge alt='GooglePlay' src='assets/badge-google-play.svg'
+              img.store-badge.d-none-sp alt='Chrome拡張' src='https://timecrowd-assets.s3-ap-northeast-1.amazonaws.com/assets/bn-chromewebstore-5f7d6517d69e82dc80d10013232eef82.png'
+      .counts
+        .container
+          .row
+            .col-12.text-center
+              p.display-3.usage-counter
+                | 
+                span.display-2
+                  | 1
+                span.display-2
+                  | 2
+                span.usage-counter-unit
+                  | 年
+                span.display-2
+                  | 7
+                span.display-2
+                  | 2
+                span.usage-counter-unit
+                  | 日 
+                span.display-2
+                  | 2
+                span.display-2.usage-counter-text
+                  | 2
+                span.usage-counter-unit
+                  | 時間 
+                span.usage-counter-text
+                  | 37
+                span.usage-counter-unit
+                  | 分 
+                span.usage-counter-text
+                  | 3
+                span.usage-counter-text
+                  | 8
+                span.usage-counter-unit
+                  | 秒 
+              p.display-3.mb-0 タイムクラウドに保存・チーム内共有されています
+              small ※10時間を超える打刻は止め忘れとみなし、上記に含んでいません
+    section.section
+      .container
+        .row
+          .col-md-4
+            h2 未来を共有
+            img.img-fluid.screenshots src="./assets/tc-scr-temp-future.png" alt='未来を共有'
+            .balloon.mb-3
+              span
+                | 仲間の未来が見通せる
+              span.ml-1.text-lemon
+                | から嬉しい
+              img.balloon-arrow src="./assets/tc-balloon-arrow.svg" alt='仲間の未来が見通せるから嬉しい'
+            p.mt-2
+              | Googleカレンダー等と連動して空き時間を手軽にチームと共有できます。
+            p 
+              |ピンポイントな時間帯共有はもちろん「時間帯は未定だけど来週は20時間程このチームの仕事ができる」などの共有も可能なので未来が見通せます。
+          .col-md-4.mt-2-sp
+            h2 現在を共有
+            img.img-fluid.screenshots src="./assets/tc-scr-temp-now.png" alt='現在を共有'
+            .balloon.mb-3
+              span
+                | 今一番大切な事に集中できる
+              span.ml-1.text-lemon
+                | から嬉しい
+              img.balloon-arrow src="./assets/tc-balloon-arrow.svg" alt='今一番大切な事に集中できるから嬉しい'
+            p
+              | 今やっているタスクをリアルタイムで共有することでオフィスで隣の席にいる時以上に誰が何をやっているのかを把握することができます。
+            p
+              |「そのタスクそんなに優先度が高くないから後回しでいいよ」などのコミュニケーションができます。
+          .col-md-4.mt-2-sp
+            h2 過去を共有
+            img.img-fluid.screenshots src="./assets/tc-scr-temp-past.png" alt='過去を共有'
+            .balloon.mb-3
+              span
+                | 成果の詳細を評価してもらえる
+              span.ml-1.text-lemon
+                | から嬉しい
+              img.balloon-arrow src="./assets/tc-balloon-arrow.svg" alt='成果の詳細を評価してもらえるから嬉しい'
+            p
+              | 時給計算まで含めた稼働レポートを確認する事ができます。 
+            p 
+              | タスク毎の内訳がわかるので 「こんな短期間でこんなアウトプット が出せてすごい!」と褒められたり 「ここの時間対効果悪いね、どうすれば改善できるだろう？」といった振り返りの際の参考情報としてとても有用です。
+    section.section
+      .container
+        .row
+          .col-12
+            h2.text-center.mb-4 利用事例
+          .col-md-4.text-center
+            img.rounded-circle.mb-3 src="assets/pic-case-1.jpg" width="120" alt='株式会社パソナ 営業総本部 湯田健一郎様'
+            h3.mb-2 テレワーク等の柔軟な働き方を支援するツールとして
+            p.text-muted.mb-3 株式会社パソナ 営業総本部 湯田健一郎様
+            p.text-left 従来の勤怠管理システムは出勤時間、退勤時間、昼間休憩、夜間休憩の４つの概念しか存在していませんでしたがTimeCrowdで細かい打刻が可能になりました。
+          .col-md-4.text-center.mt-2-sp
+            img.rounded-circle.mb-3 src="assets/pic-case-2.jpg" width="120" alt='株式会社サイトビジット代表取締役 鬼頭政人様'
+            h3.mb-2 実際に使ってみると継続できるほど手軽だった
+            p.text-muted.mb-3 株式会社サイトビジット代表取締役 鬼頭政人様
+            p.text-left Chrome拡張を使って手軽に時間を記録することができました。出張などで離れた場所にいても、リアルタイムで誰が何をしているのかを共有できるのも良いです。
+          .col-md-4.text-center.mt-2-sp
+            img.rounded-circle.mb-3 src="assets/pic-case-3.jpg" width="120" alt='窪田法律事務所様'
+            h3.mb-2 弁護士業務のタイムチャージ案件の時間計測にも最適
+            p.text-muted.mb-3 窪田法律事務所様
+            p.text-left シンプルな作りになっていて導入しやすかったです。エクセル形式でダウンロードできるのも便利です。
+        .mt-4.text-center
+          a.btn.btn-primary.btn-lg.btn-rounded.btn-conversion href="#" 無料で試す
+          .mt-2
+            a.btn.btn-lg.btn-link href="/assets/timecrowd.pdf" target="_blank" PDF資料ダウンロード
+    /section.section
+      .container
+        .row
+          .col-12.text-center.mb-4
+            h2.mb-2 これだけで今すぐ始められます
+          .col-12
+            | Step1. チームとカテゴリーを登録して招待 → Step2. 招待された人がカテゴリーを選んでタスクを追加して打刻→Step3. みんなで振り返り
+            /table.table.table-striped
+              thead.thead-inverse
+                tr
+                  th
+                    | 管理者
+                  th
+                    | メンバー
+              tbody
+                tr
+                  td
+                    | チームを作って招待する(2週間無料)
+                  td
+                    | 招待を受け取る
+                tr
+                  td
+                    strike
+                      | メンバーの稼働上限を調整する
+                  td
+                    strike
+                      | チームに自分の空き時間を共有する
+                tr
+                  td
+                    strike
+                      | カテゴリー登録する
+                  td
+                    | タスクごとに打刻する PCブラウザ / Chrome拡張 / iPhone / Android
+                tr
+                  td.text-center colspan="2"
+                    | 過去の時間を共有して改善する
+                    /span
+                      br
+                      | 外注の場合はそのまま請求管理
+
+        .mt-4.text-center
+          a.btn.btn-primary.btn-lg.btn-rounded.btn-conversion href="#" 無料で試す
+          .mt-2
+            a.btn.btn-lg.btn-link href="/assets/timecrowd.pdf" target="_blank" PDF資料ダウンロード
+    section.section
+      .container
+        .row
+          .col-12.text-center.mb-3
+            h2 シンプルな料金体系
+        .row.justify-content-md-center
+          .col-md-8.col-md-auto
+            .row
+              .col-md-6.text-center
+                i.dripicons-user.icon-xl
+                p.display-4.mt-3
+                  span.mr-1 個人利用
+                  strong 無料
+                p.mb-3 試用してみたい個人ユーザーにおすすめです
+                a.btn.btn-secondary.btn-lg.btn-rounded.mt-2 href="/auth/google"  無料で試す
+              .col-md-6.text-center.mt-4-sp
+                i.dripicons-user-group.icon-xl
+                p.display-4.mt-3
+                  span.mr-1 チーム利用
+                  strong 月額 ¥500/人
+                form accept-charset="UTF-8" action="/trial" method="post" 
+                  input name="utf8" type="hidden" value="✓" /
+                  input name="authenticity_token" type="hidden" value="LF4l8V3e3IbT84EC7Z2Xfj1xJn/RSHgWNxghz76eCWirqFw1GWOcrQzL/kNPRHmdfF/0Pqfr8Fyu/8AeWg+acA==" /
+                  .form-group.mb-3
+                    input#demo-name.form-control name="team_name" placeholder="作成するチーム名" type="text" /
+                  button.btn.btn-primary.btn-lg.btn-rounded name="button" type="submit"  2週間無料で試す
+
+
+          /.col-12.text-center.mb-4
+            h2 まずは使ってみてください
+            p.lead あなたのチームの時間短縮に貢献し、余裕のあるライフスタイルを提供します
+          /div
+            .col-md-4
+              h3 個人での利用
+              p 機能無制限
+              p.display-2 無料
+            .col-md-8
+              h3 チームでの利用
+              p 
+                | リアルタイム共有は無料
+                br
+                | 過去の稼働に関するもの（レポート表示、xlsxダウンロードなど）を利用する場合のみ
+              p 
+                | 1ユーザー
+                span.display-2
+                  | 500円
+                | /月
+              p
+                | （チーム作成から２週間は完全無料）
+
+    section.section
+      .container
+        .row
+          .col-12.text-center.mb-4
+            h2 機能一覧
+          .col-md-3.pb-3
+            h3 チーム作成・管理
+            p チーム名を入力するだけであなた専用チームが作成され、２週間無料で利用できます。他のメンバーの招待もURLを送るだけで手軽にできます
+          .col-md-3.pb-3
+            h3 どこからでも打刻
+            p 各種PCブラウザ・iPhoneアプリ・Androidからタスク名を入力して簡単に打刻。Chrome拡張を使えば今見ているWebサイトのURL毎に打刻できるのでタスク名入力すら不要になります。
+          .col-md-3.pb-3
+            h3 リアルタイム共有
+            p あなたのチーム内のメンバーが今どのタスクをどれぐらいの時間進めているのかがリアルタイムでわかります。
+          .col-md-3.pb-3
+            h3 レポート機能
+            p チーム全体、カテゴリー毎、人別、期間指定など、様々な条件でレポートが表示。メンバーの時間単価を入れれば人件費原価も計算してくれます。
+          .col-md-3.pb-3
+            h3
+              | 空き時間共有
+              span style='font-size: 12px; color: #999;' （近日公開予定）
+            p 「来週は20時間ぐらい稼働できます」といった共有も簡単にできます。
+          .col-md-3.pb-3
+            h3
+              | 稼働上限設定
+              span style='font-size: 12px; color: #999;' （近日公開予定）
+            p チームメンバー毎に稼働上限を設定可能。それを超える場合は残業申請と承認ができます。
+          .col-md-3.pb-3
+            h3
+              | 請求書連携
+              span style='font-size: 12px; color: #999;' （近日公開予定）
+            p Misoca、Boardなど、オンライン請求書ツールと連携予定。チームの稼働をもれなく請求管理できます。
+          .col-md-3.pb-3
+            h3 API連携
+            p
+              a href='https://timecrowd.net/apidoc' target='_blank' https://timecrowd.net/apidoc
+              | にて様々な形式のAPIを公開しています。
+        .mt-4.text-center
+          a.btn.btn-primary.btn-lg.btn-rounded.btn-conversion href="#" 無料で試す
+          .mt-2
+            a.btn.btn-lg.btn-link href="/assets/timecrowd.pdf" target="_blank" PDF資料ダウンロード
+
+    footer.footer
+      .container  
+        .row.mb-4
+          .col-md-5
+            p.footer-lead お問い合わせ
+            .footer-chatwork.d-none-sm
+              a.btn.btn-secondary.btn-block href="http://chatwork.com/timecrowd"
+                img.company-icon src="./assets/chatwork-logo-nontext.svg" alt="ChatWork"
+                | ChatWorkでお問い合わせ
+            form
+              .form-label.mb-2.d-none-sm
+                | メールでお問い合わせ
+              .form-group
+                input.form-control type="email" placeholder="返信先E-Mailアドレス"
+              .form-group
+                textarea.form-control rows="5" placeholder="お問い合わせ内容"
+              button.btn.btn-primary type="submit"
+                | お問い合わせを送る
+
+          .col-md-3.mt-2-sp
+            p.footer-lead 運営
+            ul.footer-list
+              li.footer-list-item
+                a href="https://co.ruffnote.com" target="_blank" 運営会社
+              li.footer-list-item
+                a href="https://timecrowd.net/terms" 利用規約
+              li.footer-list-item
+                a href="https://timecrowd.net/privacy_policy" プライバシーポリシー
+
+
+          .col-md-4.mt-2-sp
+            p.footer-lead よろしければ「いいね！」是非
+            .row
+              div style="padding: 0 20px;"
+                .fb-page data-href="https://www.facebook.com/timecrowd" data-width="276" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"
+              /.col
+                ul.footer-list
+                  /li.footer-list-item
+                    a href="#" 機能一覧
+                  li.footer-list-item
+                    a href="#" サポート
+                  li.footer-list-item
+                    a href="#" おしらせ
+              /.col
+                ul.footer-list
+                  li.footer-list-item
+                    a href="#" ログイン
+                  li.footer-list-item
+                    a href="#" 無料で試す
+                  li.footer-list-item
+                    a href="#" iPhoneアプリ
+                  li.footer-list-item
+                    a href="#" Androidアプリ
+                  li.footer-list-item
+                    a href="#" Chrome拡張
+      .container-fluid.text-center.copyright
+        .row.no-gutters
+          small Copyright &copy; 2017 Ruffnote Inc All Right Reserved.
+
+#fb-root
+javascript:
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));

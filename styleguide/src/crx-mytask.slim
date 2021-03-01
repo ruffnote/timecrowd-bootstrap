@@ -1,0 +1,282 @@
+doctype html
+html lang='ja'
+  head
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    link rel='stylesheet' href='./assets/service.css'
+    link rel='stylesheet' href='./assets/styleguide.css'
+  body
+    div
+      ul.nav.nav-justified.tabbar
+        li.nav-item.active
+          a.nav-link href="/" 
+            i.dripicons-home
+            span.badge.badge-pill.badge-danger 2
+            span.tabbar-text マイタスク
+        li.nav-item
+          a.nav-link href="member" 
+            i.dripicons-user
+            span.tabbar-text メンバー(4)
+        li.nav-item
+          a.nav-link href="report" 
+            i.dripicons-graph-pie
+            span.tabbar-text レポート
+        li.nav-item
+          a.nav-link href="other" 
+            i.dripicons-dots-3
+            span.tabbar-text その他
+      div
+        .quicktask.new
+          .input-group.newtask-input-group
+            span.input-group-btn.drawer
+              button.btn.btn-secondary.btn-sm
+                i.category-circle.btn-icon
+                span.btn-text
+                  | カテゴリー - チーム
+            input.form-control.quicktask-title placeholder="新しいタスク" type="text" value="" /
+            span.input-group-btn
+              button.btn.btn-primary.quicktask-start
+                i.icon-lg.tc-start
+          .quicktask-tab
+            .new-task-tab
+              .tab-content
+                .tab-pane.active
+                  .d-flex
+                    .btn-group
+                      button.btn.btn-secondary.btn-sm type="button" 
+                        i.fa.fa-users
+                        span 担当
+                      button.btn.btn-secondary.btn-sm type="button" 
+                        i.fa.fa-calendar-times-o
+                        span 期限
+                    .btn-group
+                      button.btn.btn-secondary.btn-sm type="button" 
+                        i.fa.fa-repeat
+                      button.btn.btn-secondary.btn-sm type="button" 
+                        i.fa.fa-link
+                      button.btn.btn-secondary.btn-sm type="button" 
+                        i.fa.fa-comment
+          .task-types
+            ul.nav.nav-tabs
+              li.nav-item
+                a.nav-link.active href="#"  タスク
+              li.nav-item
+                a.nav-link href="#"  日程予約
+              li.nav-item
+                a.nav-link href="#"  空き時間
+      .datebar
+        .datebar-header
+          span.date-icon
+            i.icon-md.dripicons-heart
+          span.current-date-title 今日
+          span.current-date-status 
+            span.current-date-operation-times 5時間05分 
+            | / 
+            span.current-date-scheduled-times 7時間0分 
+            span.current-date-cost ¥12,000
+        .datebar-controls
+          button.btn.btn-secondary.btn-sm type="button" 
+            i.icon-sm.dripicons-gear
+          button.btn.btn-secondary.btn-sm type="button" 
+            span.btn-text
+              i.icon-sm.dripicons-calendar
+      .content-area
+        .tasklist
+          .task
+            .task-header
+              span.task-icon.task-icon-start
+                i.tc-start-circle
+              span.task-title タスクタイトルタスクタイトルタスクタイトルタスクタイトルタスクタイトル
+            .task-block
+              .task-text.task-category
+                i.category-circle
+                span.task-category-title
+                  | カテゴリー - 
+                  | チーム
+              .task-text.task-duration
+                span
+                  i.icon-sm.dripicons-clock
+                  | 02:14:56
+            .task-controls
+              .btn-group
+                button.btn.btn-primary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.tc-start
+              .btn-group
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pin
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pencil
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-checkmark
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-dots-3
+          .task.logging
+            .task-header
+              span.task-icon.task-icon-stop
+                i.tc-stop-circle
+              span.task-title タスクタイトルタスクタイトルタスクタイトルタスクタイトルタスクタイトル
+            .task-block
+              .task-text.task-category
+                i.category-circle
+                span.task-category-title
+                  | カテゴリー - 
+                  | チーム
+              .task-text.task-duration
+                span
+                  i.icon-sm.dripicons-clock
+                  | 02:14:56
+            .task-controls
+              .btn-group
+                button.btn.btn-warning.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.tc-stop
+              .btn-group
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pin
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pencil
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-checkmark
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-dots-3
+          .task
+            .task-header
+              span.task-icon.task-icon-start
+                i.dripicons-stopwatch
+              span.task-title タスクタイトルタスクタイトルタスクタイトルタスクタイトルタスクタイトル
+            .task-block
+              .task-text.task-category
+                i.category-circle
+                span.task-category-title
+                  | カテゴリー - 
+                  | チーム
+              .task-text.task-duration
+                span
+                  i.icon-sm.dripicons-clock
+                  | 02:14:56
+            .task-controls
+              .btn-group
+                button.btn.btn-primary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-media-play
+              .btn-group
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pin
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pencil
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-checkmark
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-dots-3
+          .task
+            .task-header
+              span.task-icon.task-icon-start
+                i.dripicons-stopwatch
+              span.task-title タスクタイトルタスクタイトルタスクタイトルタスクタイトルタスクタイトル
+            .task-block
+              .task-text.task-category
+                i.category-circle
+                span.task-category-title
+                  | カテゴリー - 
+                  | チーム
+              .task-text.task-duration
+                span
+                  i.icon-sm.dripicons-clock
+                  | 02:14:56
+            .task-controls
+              .btn-group
+                button.btn.btn-primary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-media-play
+              .btn-group
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pin
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pencil
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-checkmark
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-dots-3
+          .task
+            .task-header
+              span.task-icon.task-icon-start
+                i.dripicons-stopwatch
+              span.task-title タスクタイトルタスクタイトルタスクタイトルタスクタイトルタスクタイトル
+            .task-block
+              .task-text.task-category
+                i.category-circle
+                span.task-category-title
+                  | カテゴリー - 
+                  | チーム
+              .task-text.task-duration
+                span
+                  i.icon-sm.dripicons-clock
+                  | 02:14:56
+            .task-controls
+              .btn-group
+                button.btn.btn-primary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-media-play
+              .btn-group
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pin
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pencil
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-checkmark
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-dots-3
+          .task
+            .task-header
+              span.task-icon.task-icon-start
+                i.dripicons-stopwatch
+              span.task-title タスクタイトルタスクタイトルタスクタイトルタスクタイトルタスクタイトル
+            .task-block
+              .task-text.task-category
+                i.category-circle
+                span.task-category-title
+                  | カテゴリー - 
+                  | チーム
+              .task-text.task-duration
+                span
+                  i.icon-sm.dripicons-clock
+                  | 02:14:56
+            .task-controls
+              .btn-group
+                button.btn.btn-primary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-media-play
+              .btn-group
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pin
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-pencil
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-checkmark
+                button.btn.btn-secondary.btn-sm type="button" 
+                  span.btn-icon
+                    i.icon-sm.dripicons-dots-3

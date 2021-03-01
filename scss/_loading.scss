@@ -1,0 +1,20 @@
+.loading {
+  &:before {
+    content: "\e011";
+    font-family: "dripicons-v2";
+    color: inherit;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    animation: loading-anim 2.4s linear infinite;
+  }
+}
+
+@keyframes loading-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

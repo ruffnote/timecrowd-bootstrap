@@ -1,0 +1,120 @@
+doctype html
+html lang='ja'
+  head
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    title TimeCrowd - タイムクラウドはチームでの時間を共有し生産性を高めるためのツールです
+    meta name='description' content='時間を共有すると嬉しい事が増える - 未来、現在、過去。タイムクラウドはチームでの時間を共有し生産性を高めるためのツールです'
+    link rel='stylesheet' href='./assets/promotion.css'
+    link rel='stylesheet' href='./assets/styleguide.css'
+    meta property='og:title' content='TimeCrowd'
+    meta property='og:type' content='website'
+    meta property='og:url' content='https://timecrowd.net'
+    meta property='og:image' content='./assets/tc-ogp.png'
+    meta property='og:site_name'  content='https://timecrowd.net'
+    meta property='og:description' content='時間を共有すると嬉しい事が増える - 未来、現在、過去。タイムクラウドはチームでの時間を共有し生産性を高めるためのツールです'
+  body
+    nav.navbar.navbar-toggleable-md.navbar-light.fixed-top
+      .container.d-flex
+        a.navbar-brand href="#"
+          img.logo src="./assets/tc-logo-horizontal-web.svg" alt="TimeCrowd"
+        #navbarNav.d-flex-right
+          ul.nav.navbar-nav.d-none-sp
+            /li.nav-item
+              a.nav-link href="#" 機能一覧
+            li.nav-item
+              a.nav-link target="_blank" href="http://chatwork.com/timecrowd" 
+                img.company-icon src="./assets/chatwork-logo-nontext.svg" alt="ChatWork"
+                | ChatWorkでサポート
+            li.nav-item.nav-item-separator
+              a.nav-link href="#" ログイン
+            li.nav-item.nav-item-primary
+              a.nav-link href="#" 無料で試す
+        .d-none-sm
+          a.btn.btn-secondary.btn-sm href="#" ログイン
+          a.btn.btn-primary.btn-sm href="#" 試す
+            
+    .news-ticker
+      .container
+        .row.justify-content-end
+          .news-ticker-body.col-md-7.text-right
+            .news-info
+              span.news-date 2017-03-01
+              span.news-title
+                a href="promotion-news1.html" 全てのデザインを刷新しました。
+              a.d-flex-right href="#" 
+                | 過去
+                span.d-none-sp
+                  | のニュース
+    section.section
+      .container
+        .row
+
+    footer.footer
+      .container  
+        .row.mb-4
+          .col-md-5
+            p.footer-lead お問い合わせ
+            .footer-chatwork.d-none-sm
+              a.btn.btn-secondary.btn-block href="http://chatwork.com/timecrowd"
+                img.company-icon src="./assets/chatwork-logo-nontext.svg" alt="ChatWork"
+                | ChatWorkでお問い合わせ
+            form
+              .form-label.mb-2.d-none-sm
+                | メールでお問い合わせ
+              .form-group
+                input.form-control type="email" placeholder="返信先E-Mailアドレス"
+              .form-group
+                textarea.form-control rows="5" placeholder="お問い合わせ内容"
+              button.btn.btn-primary type="submit"
+                | お問い合わせを送る
+
+          .col-md-3.mt-2-sp
+            p.footer-lead 運営
+            ul.footer-list
+              li.footer-list-item
+                a href="https://co.ruffnote.com" target="_blank" 運営会社
+              li.footer-list-item
+                a href="https://timecrowd.net/terms" 利用規約
+              li.footer-list-item
+                a href="https://timecrowd.net/privacy_policy" プライバシーポリシー
+
+
+          .col-md-4.mt-2-sp
+            p.footer-lead よろしければ「いいね！」是非
+            .row
+              div style="padding: 0 20px;"
+                .fb-page data-href="https://www.facebook.com/timecrowd" data-width="276" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"
+              /.col
+                ul.footer-list
+                  /li.footer-list-item
+                    a href="#" 機能一覧
+                  li.footer-list-item
+                    a href="#" サポート
+                  li.footer-list-item
+                    a href="#" おしらせ
+              /.col
+                ul.footer-list
+                  li.footer-list-item
+                    a href="#" ログイン
+                  li.footer-list-item
+                    a href="#" 無料で試す
+                  li.footer-list-item
+                    a href="#" iPhoneアプリ
+                  li.footer-list-item
+                    a href="#" Androidアプリ
+                  li.footer-list-item
+                    a href="#" Chrome拡張
+      .container-fluid.text-center.copyright
+        .row.no-gutters
+          small Copyright &copy; 2017 Ruffnote Inc All Right Reserved.
+
+#fb-root
+javascript:
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));

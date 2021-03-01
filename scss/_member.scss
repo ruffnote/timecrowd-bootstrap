@@ -1,0 +1,51 @@
+.member {
+  background: $white;
+  border: 1px solid $border-color;
+  border-left: 0;
+  border-right: 0;
+  padding: .9rem;
+  position: relative;
+
+  + .member {
+    margin-top: -1px;
+  }
+
+  &:first-child {
+    // border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &:last-child {
+    // border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  &.disabled {
+  }
+
+  .member-name {
+    font-weight: 500;
+  }
+
+  .member-block {
+    display: flex;
+    font-size: $font-size-sm;
+    color: $secondary-text-color;
+  }
+
+  .member-status {
+    display: flex;
+    padding-left: 3.3rem;
+    width: 100%;
+  }
+
+  .member-tasks {
+    font-weight: $font-weight-bold;
+    margin-left: auto;
+
+    i {
+      margin: 0 $spacer / 2;
+    }
+  }
+}
+
+.memberlist {
+}

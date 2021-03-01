@@ -1,0 +1,93 @@
+.category-selector {
+  background: $gray-lightest;
+  border: $border-width solid $separator-color;
+  border-radius: $border-radius;
+  display: none;
+  position: absolute;
+  max-height: 380px;
+  overflow-y: scroll;
+  box-shadow: $dropdown-box-shadow;
+  top: $spacer-y * 3;
+  left: $spacer-x / 2;
+  width: calc(100% - 12px);
+  z-index: $zindex-dropdown;
+
+  .open-category-selector & {
+    display: block;
+  }
+
+  .category-team {
+    margin-bottom: $spacer-y;
+
+    .category-team-title {
+      display: block;
+      font-size: $font-size-xs;
+      line-height: $line-height-sm;
+      margin: 0 0 $spacer-y / 2 $spacer-x;
+      color: $secondary-text-color;
+
+      i {
+        margin-right: 6px;
+      }
+    }
+
+    .category {
+      list-style: none;
+      padding-left: 0;
+
+      .category-item {
+        padding-left: 14px;
+      }
+    }
+  }
+
+  .category-title {
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .category-recents,
+  .category-items {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding: $spacer-y / 2 0;
+
+    .category-circle {
+      margin-right: 8px;
+      min-height: 7px;
+      min-width: 7px;
+      top: $spacer;
+    }
+
+    .category-item {
+      cursor: pointer;
+      display: flex;
+      line-height: $spacer * 2.5;
+      padding: 0 $spacer-x;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:hover {
+        background: $gray-lighter;
+      }
+
+      &:active {
+        background: $component-active-bg;
+      }
+    }
+  }
+
+  .category-recents {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.category-selector-controls {
+  background: $gray-lightest;
+  padding: $spacer / 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

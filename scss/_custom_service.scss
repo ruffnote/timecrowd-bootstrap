@@ -1,0 +1,752 @@
+// Webfonts
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+// Colors
+
+$white:                 #fff;
+$black:                 #000;
+$red:                   #F34472;
+$orange:                #E86840;
+$yellow:                #F4CD21;
+$green:                 #4EC0AA;
+$blue:                  #4FBDCA;
+
+$gray-dark:             #494949;
+$gray-dim:              #767676;
+$gray:                  #9e9e9e;
+$gray-light:            #D8d8d8;
+$gray-lighter:          #ECECEC;
+$gray-lightest:         #f6f6f6;
+
+$mint:                  $green;
+$lemon:                 $yellow;
+$choco:                 #554B4B;
+$choco-light:           #9B9494;
+
+$brand-primary:         $mint;
+$brand-success:         $blue;
+$brand-info:            $choco-light;
+$brand-warning:         $orange;
+$brand-danger:          $red;
+$brand-inverse:         $choco;
+
+$body-bg:               $white;
+$body-bg-secondary:     $gray-lightest;
+$body-color:            $gray-dark;
+$inverse-bg:            $choco;
+$inverse-bg-secondary:  $choco-light;
+$inverse-color:         $white;
+
+$link-color:            $brand-primary;
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 5%);
+$link-hover-decoration: underline;
+
+$secondary-text-color:  $gray;
+$label-color:           $gray-dim;
+
+$separator-color:       $gray-light;
+$border-color:          $gray-lighter;
+
+$active-color:          $lemon;
+
+// Spacing
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer:   1.2rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: ($spacer-x / 2),
+    y: ($spacer-y / 2)
+  ),
+  2: (
+    x: ($spacer-x),
+    y: ($spacer-y)
+  ),
+  3: (
+    x: ($spacer-x * 2),
+    y: ($spacer-y * 2)
+  ),
+  4: (
+    x: ($spacer-x * 4),
+    y: ($spacer-y * 4)
+  ),
+  5: (
+    x: ($spacer-x * 5),
+    y: ($spacer-y * 5)
+  )
+);
+$border-width: 1px;
+
+// Grid container
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1008px
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid
+
+$grid-columns:               12;
+$grid-gutter-width-base:     $spacer-x * 3;
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+);
+
+// Fonts
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, monospace;
+$font-family-base:       $font-family-sans-serif;
+
+$font-size-html: 10px;
+$font-size-base: 1.3rem;
+$font-size-xxl:  3.6rem;
+$font-size-xl:   2.4rem;
+$font-size-lg:   1.8rem;
+$font-size-sm:   1.15rem;
+$font-size-xs:   1rem;
+
+$font-weight-normal: 400;
+$font-weight-bold:   700;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: $spacer * 2;
+
+$font-size-h1: $font-size-xxl;
+$font-size-h2: $font-size-xl;
+$font-size-h3: $font-size-lg;
+$font-size-h4: $font-size-base;
+$font-size-h5: $font-size-base;
+$font-size-h6: $font-size-base;
+
+$headings-margin-bottom: ($spacer * 2);
+$headings-font-family:   inherit;
+$headings-font-weight:   500;
+$headings-line-height:   1.5;
+$headings-color:         inherit;
+
+$display1-size: 4.8rem;
+$display2-size: 3.6rem;
+$display3-size: 2.1rem;
+$display4-size: 1.8rem;
+
+$display1-weight:     100;
+$display2-weight:     700;
+$display3-weight:     400;
+$display4-weight:     400;
+$display-line-height: $headings-line-height;
+
+$lead-font-size:   1.8rem;
+$lead-font-weight: 400;
+
+$small-font-size: $font-size-xs;
+
+$text-muted: $gray-light;
+
+$abbr-border-color: $gray-light;
+
+$blockquote-small-color:  $gray-light;
+$blockquote-font-size:    ($font-size-base * 1.25);
+$blockquote-border-color: $border-color;
+$blockquote-border-width: .2rem;
+
+$hr-border-color: rgba($black,.1);
+$hr-border-width: $border-width;
+
+$mark-padding: .2em;
+
+$dt-font-weight: $font-weight-bold;
+
+$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25);
+$nested-kbd-font-weight: $font-weight-bold;
+
+$list-inline-padding: 5px;
+
+$line-height-lg:         $spacer * 3;
+$line-height-sm:         $spacer * 1.5;
+
+$border-radius:          .5rem;
+$border-radius-lg:       .5rem;
+$border-radius-sm:       .5rem;
+
+// Components
+
+$component-active-color: $gray-dark;
+$component-active-bg:    lighten($lemon, 36%);
+$component-focus-bg:     lighten($lemon, 47.5%);
+
+$transition-base:        all .16s ease-in-out;
+$transition-fade:        opacity .16s linear;
+$transition-collapse:    height .32s ease;
+
+// Tables
+
+$table-cell-padding:            $spacer;
+$table-sm-cell-padding:         $spacer / 2;
+
+$table-bg:                      $white;
+
+$table-inverse-bg:              $gray;
+$table-inverse-color:           $body-bg;
+
+$table-bg-accent:               rgba($black,.02);
+$table-bg-hover:                rgba($black,.075) !default;
+$table-bg-active:               $table-bg-hover !default;
+
+$table-head-bg:                 $gray-lightest;
+$table-head-color:              $gray;
+
+$table-border-width:            $border-width;
+$table-border-color:            $gray-lighter;
+
+// Buttons
+
+$btn-padding-x:                  $spacer-x;
+$btn-padding-y:                  ($spacer-y / 4);
+$btn-line-height:                $line-height-base;
+$btn-font-weight:                700;
+$btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075);
+$btn-focus-box-shadow:           0 0 0 1.5px rgba($brand-primary, .25);
+$btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
+
+$btn-primary-color:              $white;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $btn-primary-bg;
+
+$btn-secondary-color:            $gray-dim;
+$btn-secondary-bg:               $white;
+$btn-secondary-border:           $separator-color;
+
+$btn-info-color:                 $white;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                $btn-info-bg;
+
+$btn-success-color:              $white;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             $btn-success-bg;
+
+$btn-warning-color:              $white;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             $btn-warning-bg;
+
+$btn-danger-color:               $white;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              $btn-danger-bg;
+
+$btn-link-disabled-color:        $gray-light;
+
+$btn-padding-x-sm:               .9rem;
+$btn-padding-y-sm:               $spacer / 4;
+
+$btn-padding-x-lg:               $spacer * 3;
+$btn-padding-y-lg:               $spacer;
+
+$btn-block-spacing-y:            .5rem;
+$btn-toolbar-margin:             .5rem;
+
+$btn-border-radius:              $border-radius;
+$btn-border-radius-lg:           $border-radius;
+$btn-border-radius-sm:           $border-radius;
+
+$btn-transition:                 all .1s ease;
+
+// Navbar
+
+$navbar-border-radius:              0;
+$navbar-padding-x:                  0;
+$navbar-padding-y:                  $spacer;
+
+$navbar-brand-padding-y:            $spacer;
+
+$navbar-toggler-padding-x:           .75rem;
+$navbar-toggler-padding-y:           .25rem;
+$navbar-toggler-font-size:           $font-size-lg;
+$navbar-toggler-border-radius:       $btn-border-radius;
+
+$navbar-inverse-color:                 rgba($white,.5);
+$navbar-inverse-hover-color:           rgba($white,.75);
+$navbar-inverse-active-color:          rgba($white,1);
+$navbar-inverse-disabled-color:        rgba($white,.25);
+$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-inverse-toggler-border:        rgba($white,.1);
+
+$navbar-light-color:                rgba($gray-dark,.9);
+$navbar-light-hover-color:          rgba($brand-primary,.7);
+$navbar-light-active-color:         rgba($brand-primary,.9);
+$navbar-light-disabled-color:       rgba($black,.3);
+$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-light-toggler-border:       rgba($black,.1);
+
+// Navs
+
+$nav-item-margin:               0;
+$nav-item-inline-spacer:        $spacer;
+$nav-link-padding:              ($spacer / 2) $spacer;
+$nav-link-hover-bg:             $gray-lighter;
+$nav-disabled-link-color:       $gray-light;
+
+$nav-tabs-border-color:                       $separator-color;
+$nav-tabs-border-width:                       2px;
+$nav-tabs-border-radius:                      $border-radius;
+$nav-tabs-link-hover-border-color:            $separator-color;
+$nav-tabs-active-link-hover-color:            $link-color;
+$nav-tabs-active-link-hover-bg:               $body-bg;
+$nav-tabs-active-link-hover-border-color:     $link-color;
+$nav-tabs-justified-link-border-color:        $separator-color;
+$nav-tabs-justified-active-link-border-color: $link-color;
+
+$nav-pills-border-radius:     $border-radius;
+$nav-pills-active-link-color: $white;
+$nav-pills-active-link-bg:    $link-color;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-min-width:             $spacer-x * 20;
+$dropdown-padding-y:             $spacer-y / 2;
+$dropdown-margin-top:            $spacer-y / 4;
+$dropdown-bg:                    $gray-lightest;
+$dropdown-border-color:          $separator-color;
+$dropdown-border-width:          $border-width;
+$dropdown-divider-bg:            $border-color;
+$dropdown-box-shadow:            0 0 2px 2px rgba(0,0,0,.05);
+
+$dropdown-link-color:            $gray-dim;
+$dropdown-link-hover-color:      $body-color;
+$dropdown-link-hover-bg:         $border-color;
+
+$dropdown-link-active-color:     $component-active-color;
+$dropdown-link-active-bg:        lighten($lemon, 20%);
+
+$dropdown-link-disabled-color:   $gray-light;
+
+$dropdown-item-padding-x:        $spacer-x;
+
+$dropdown-header-color:          $gray-lightest;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-plus: 10;
+$zindex-dropdown-backdrop:  990 !default;
+$zindex-navbar:             1000 !default;
+$zindex-dropdown:           1000 !default;
+$zindex-fixed:              1030 !default;
+$zindex-sticky:             1030 !default;
+$zindex-modal-backdrop:     1040 !default;
+$zindex-modal:              1050 !default;
+$zindex-popover:            1060 !default;
+$zindex-tooltip:            1070 !default;
+
+// Jumbotron
+
+$jumbotron-padding:              ($spacer * 5);
+$jumbotron-bg:                   $gray-dark;
+
+// Form states and alerts
+//
+// Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             $blue;
+$state-success-bg:               lighten($blue, 40%);
+$state-success-border:           transparent;
+
+$state-info-text:                $gray-dim;
+$state-info-bg:                  lighten($gray-dim, 50%);
+$state-info-border:              transparent;
+
+$state-warning-text:             $brand-warning;
+$state-warning-bg:               lighten($brand-warning, 36%);
+$mark-bg:                        $brand-warning;
+$state-warning-border:           transparent;
+
+$state-danger-text:              $white;
+$state-danger-bg:                $brand-danger;
+$state-danger-border:            transparent;
+
+
+// Forms
+
+$input-padding-x:                $spacer;
+$input-padding-y:                $spacer / 2;
+$input-line-height:              $line-height-base;
+
+$input-bg:                       $white;
+$input-bg-disabled:              $gray-lighter;
+
+$input-color:                    $gray-dark;
+$input-border-color:             $separator-color;
+$input-btn-border-width:         $border-width; // For form controls and buttons
+$input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
+
+$input-border-radius:            $border-radius;
+$input-border-radius-lg:         $border-radius-lg;
+$input-border-radius-sm:         $border-radius-sm;
+
+$input-bg-focus:                 $component-focus-bg;
+$input-border-focus:             lighten($active-color, 20%);
+$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
+$input-color-focus:              $input-color;
+
+$input-color-placeholder:        lighten($gray, 15%);
+
+$input-padding-x-sm:             $spacer;
+$input-padding-y-sm:             $spacer / 4;
+
+$input-padding-x-lg:             $spacer;
+$input-padding-y-lg:             $spacer;
+
+$input-height:                   $spacer * 3;
+$input-height-lg:                $spacer * 4;
+$input-height-sm:                $spacer * 2;
+
+$input-transition:               border-color ease-in-out .16s, box-shadow ease-in-out .16s;
+
+$form-text-margin-top:     $spacer / 4;
+$form-feedback-margin-top: $form-text-margin-top;
+
+$form-check-margin-bottom:  .5rem !default;
+$form-check-input-gutter:  $spacer * 2;
+$form-check-input-margin-y: $spacer / 2;
+$form-check-input-margin-x: $spacer / 2;
+
+$form-check-inline-margin-x: $spacer;
+
+$form-group-margin-bottom:       $spacer-y;
+
+$input-group-addon-bg:           $gray-lighter !default;
+$input-group-addon-border-color: $input-border-color;
+
+$cursor-disabled:                not-allowed;
+
+$custom-control-gutter:   1.5rem !default;
+$custom-control-spacer-x: 1rem !default;
+$custom-control-spacer-y: .25rem !default;
+
+$custom-control-indicator-size:       1rem !default;
+$custom-control-indicator-margin-y:   (($line-height-base * 1rem) - $custom-control-indicator-size) / -2 !default;
+$custom-control-indicator-bg:         #ddd !default;
+$custom-control-indicator-bg-size:    50% 50% !default;
+$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black,.1) !default;
+
+$custom-control-disabled-cursor:             $cursor-disabled !default;
+$custom-control-disabled-indicator-bg:       $gray-lighter !default;
+$custom-control-disabled-description-color:  $gray-light !default;
+
+$custom-control-checked-indicator-color:      $white !default;
+$custom-control-checked-indicator-bg:         $brand-primary !default;
+$custom-control-checked-indicator-box-shadow: none !default;
+
+$custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px $brand-primary !default;
+
+$custom-control-active-indicator-color:      $white !default;
+$custom-control-active-indicator-bg:         lighten($brand-primary, 35%) !default;
+$custom-control-active-indicator-box-shadow: none !default;
+
+$custom-checkbox-radius: $border-radius !default;
+$custom-checkbox-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-checked-indicator-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+$custom-checkbox-indeterminate-bg: $brand-primary !default;
+$custom-checkbox-indeterminate-indicator-color: $custom-control-checked-indicator-color !default;
+$custom-checkbox-indeterminate-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indeterminate-indicator-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-checkbox-indeterminate-box-shadow: none !default;
+
+$custom-radio-radius: 50% !default;
+$custom-radio-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-checked-indicator-color}'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+$custom-select-padding-x:          .75rem  !default;
+$custom-select-padding-y:          .375rem !default;
+$custom-select-indicator-padding:   1rem !default; // Extra padding to account for the presence of the background-image based indicator
+$custom-select-line-height:         $input-line-height !default;
+$custom-select-color:               $input-color !default;
+$custom-select-disabled-color:      $gray-light !default;
+$custom-select-bg:            $white !default;
+$custom-select-disabled-bg:   $gray-lighter !default;
+$custom-select-bg-size:       8px 10px !default; // In pixels because image dimensions
+$custom-select-indicator-color: #333 !default;
+$custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-select-border-width:  $input-btn-border-width !default;
+$custom-select-border-color:  $input-border-color !default;
+$custom-select-border-radius: $border-radius !default;
+
+$custom-select-focus-border-color: lighten($brand-primary, 25%) !default;
+$custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5) !default;
+
+$custom-select-sm-padding-y:  .2rem !default;
+$custom-select-sm-font-size:  75% !default;
+
+$custom-file-height:           2.5rem !default;
+$custom-file-width:            14rem !default;
+$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-primary !default;
+
+$custom-file-padding-x:     .5rem !default;
+$custom-file-padding-y:     1rem !default;
+$custom-file-line-height:   1.5 !default;
+$custom-file-color:         $gray !default;
+$custom-file-bg:            $white !default;
+$custom-file-border-width:  $border-width !default;
+$custom-file-border-color:  $input-border-color !default;
+$custom-file-border-radius: $border-radius !default;
+$custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05) !default;
+$custom-file-button-color:  $custom-file-color !default;
+$custom-file-button-bg:     $gray-lighter !default;
+$custom-file-text: (
+  placeholder: (
+    en: "Choose file..."
+  ),
+  button-label: (
+    en: "Browse"
+  )
+) !default;
+
+
+// Form validation icons
+$form-icon-success-color: $brand-success !default;
+$form-icon-success: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-success-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+$form-icon-warning-color: $brand-warning !default;
+$form-icon-warning: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-warning-color}' d='M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+$form-icon-danger-color: $brand-danger !default;
+$form-icon-danger: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-icon-danger-color}' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+
+// Badge
+
+// Badges
+
+$badge-default-bg:            $gray;
+$badge-primary-bg:            $brand-primary;
+$badge-success-bg:            $brand-success;
+$badge-info-bg:               $brand-info;
+$badge-warning-bg:            $brand-warning;
+$badge-danger-bg:             $brand-danger;
+
+$badge-color:                 $white;
+$badge-link-hover-color:      $white;
+$badge-font-size:             $font-size-xs;
+$badge-font-weight:           $font-weight-bold;
+$badge-padding-x:             $spacer / 2;
+$badge-padding-y:             $spacer / 4;
+
+$badge-pill-padding-x:        $spacer / 2;
+// Use a higher than normal value to ensure completely rounded edges when
+// customizing padding or font-size on labels.
+$badge-pill-border-radius:    1.2rem;
+
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$alert-padding-x:             $spacer-x;
+$alert-padding-y:             $spacer-y / 2;
+$alert-margin-bottom:         0;
+$alert-border-radius:         0;
+$alert-link-font-weight:      $font-weight-bold;
+$alert-border-width:          0;
+
+$alert-success-bg:            $brand-success;
+$alert-success-text:          $white;
+$alert-success-border:        $state-success-border;
+
+$alert-info-bg:               $brand-info;
+$alert-info-text:             $white;
+$alert-info-border:           $state-info-border;
+
+$alert-warning-bg:            $brand-warning;
+$alert-warning-text:          $white;
+$alert-warning-border:        $state-warning-border;
+
+$alert-danger-bg:             $brand-danger;
+$alert-danger-text:           $white;
+$alert-danger-border:         $state-danger-border;
+
+
+// Progress bars
+
+$progress-height:               1rem !default;
+$progress-font-size:            .75rem !default;
+$progress-bg:                   $gray-lighter !default;
+$progress-border-radius:        $border-radius !default;
+$progress-box-shadow:           inset 0 .1rem .1rem rgba($black,.1) !default;
+$progress-bar-color:            $white !default;
+$progress-bar-bg:               $brand-primary !default;
+$progress-bar-animation-timing: 1s linear infinite !default;
+
+// List group
+
+$list-group-color:               $body-color;
+$list-group-bg:                  $white;
+$list-group-border-color:        $border-color;
+$list-group-border-width:        $border-width;
+$list-group-border-radius:       $border-radius;
+
+$list-group-item-padding-x:      $spacer;
+$list-group-item-padding-y:      $spacer / 2;
+
+$list-group-hover-bg:            $gray-lightest;
+$list-group-active-color:        $white;
+$list-group-active-bg:           $choco-light;
+$list-group-active-border:       $list-group-active-bg;
+$list-group-active-text-color:   lighten($list-group-active-bg, 50%);
+
+$list-group-disabled-color:      $gray-light;
+$list-group-disabled-bg:         $list-group-bg;
+$list-group-disabled-text-color: $list-group-disabled-color;
+
+$list-group-link-color:          $gray;
+$list-group-link-heading-color:  $gray-dark;
+$list-group-link-hover-color:    $list-group-link-color;
+
+$list-group-link-active-color:   $list-group-color;
+$list-group-link-active-bg:      $gray-lighter;
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-html;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: #554B4B;
+  font-feature-settings: 'lnum', 'jp04';
+  font-kerning: normal;
+}
+
+.navbar-light {
+  background: $white;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.nav-item-primary .nav-link {
+  color: $brand-primary !important;
+}
+
+.nav-item-separator {
+  border-left: 1px solid $gray-lighter;
+  margin-left: $spacer;
+  padding-left: $spacer;
+}
+
+.btn-sm.btn-circle {
+  border-radius: 50%;
+  padding: 0;
+  height: $spacer * 2;
+  width: $spacer * 2;
+}
+
+.btn-lg.btn-rounded {
+  border-radius: $spacer * 2.5;
+  transition: all $transition-base;
+}
+
+.section {
+  padding: ($spacer-y * 6) 0;
+}
+
+.section-fluid {
+  padding: 0;
+}
+
+.footer {
+  background: $gray-dark;
+  color: $white;
+  padding: $spacer * 4 0 0 0;
+
+  .copyright {
+    background: $gray-light;
+    padding: $spacer * 2;
+
+    small {
+      display: block;
+      text-align: center;
+      opacity: .5;
+      width: 100%;
+    }
+  }
+}
+
+.footer-lead {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+}
+
+.footer-list {
+  padding-left: 0;
+  list-style-type: none;
+
+  .footer-list-item {
+    line-height: $spacer-y * 3;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .d-none-up-sm {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .d-none-up-md {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .d-none-up-lg {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .d-none-down-sm {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .d-none-down-md {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .d-none-down-lg {
+    display: none !important;
+  }
+}

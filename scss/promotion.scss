@@ -1,0 +1,467 @@
+/*!
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+@import "custom_service";
+
+// Reset and dependencies
+@import "normalize";
+@import "print";
+
+// Core CSS
+@import "reboot";
+@import "type";
+@import "images";
+@import "code";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+
+// Components
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "input-group";
+@import "custom-forms";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "jumbotron";
+@import "alert";
+@import "progress";
+@import "media";
+@import "list-group";
+@import "responsive-embed";
+@import "close";
+
+// Components w/ JavaScript
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+
+// Utility classes
+@import "utilities";
+
+// Animations
+@import "animation";
+
+.section {
+  background: $white;
+  border-bottom: 1px solid #f6f6f6;
+  padding: ($spacer-y * 6) 0;
+}
+
+.section:nth-of-type(even) {
+  background: #fafafa;
+}
+
+.section-fluid {
+  padding: 0;
+}
+
+.jumbotron {
+  background-color: $choco;
+  background-image: url('bg-jumbotron.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+
+  @media screen and (max-width: 535px) {
+    background-image: url('bg-jumbotron-sp.jpg');
+    background-position: bottom center;
+  }
+
+  &:after {
+    background: rgba(darken($choco, 22%),.50);
+    content: " ";
+    display: block;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  * {
+    z-index: 10;
+  }
+}
+
+.news-ticker {
+  background: $gray-lightest;
+  margin-top: $spacer * 5;
+  padding: $spacer-y / 2 0;
+
+  @media screen and (max-width: 535px) {
+    margin-top: 5.2rem;
+  }
+
+  .news-ticker-body {
+  @media screen and (max-width: 535px) {
+    display: flex;
+    padding: 0 1.2rem;
+    text-align: left !important;
+  }
+  }
+
+  a {
+    color: $gray-dark;
+  }
+
+  .news-info {
+      @media screen and (max-width: 535px) {
+        display: flex;
+        width: 100%;
+      }
+  }
+
+  .news-date {
+    color: $gray;
+
+  @media screen and (max-width: 535px) {
+    display: none;
+  }
+  }
+
+  .news-title {
+    padding: 0 $spacer-x;
+      @media screen and (max-width: 535px)  {
+        padding-left: 0;
+      }
+  }
+}
+
+.wholetimes {
+}
+
+.balloon {
+  background: rgba($white, .8);
+  border: 1px solid $gray-light;
+  border-radius: $spacer;
+  color: $gray-dark;
+  font-weight: $font-weight-bold;
+  padding: $spacer;
+}
+
+.usage-counter {
+  span {}
+  .usage-counter-unit {
+    margin: 0 $spacer-x / 4;
+    opacity: .75;
+  }
+
+  .usage-counter-text {
+    animation: count-up 1s infinite linear;
+  }
+}
+
+@keyframes count-up {
+  0% {
+    opacity: .5;
+    filter: blur(0);
+  }
+  20% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  80% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: .5;
+    filter: blur(0);
+  }
+}
+
+.footer {
+  border-top: $spacer solid $green;
+  background: $choco;
+  color: $white;
+  padding: $spacer * 4.5 0 0 0;
+  position: relative;
+
+  &:before {
+    background: $yellow;
+    content: " ";
+    display: block;
+    height: $spacer / 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .copyright {
+    background: darken($choco, 6%);
+    padding: $spacer * 2;
+
+    small {
+      display: block;
+      text-align: center;
+      opacity: .6;
+      width: 100%;
+    }
+  }
+}
+
+.footer-lead {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+}
+
+.footer-list {
+  padding-left: 0;
+  list-style-type: none;
+
+  .footer-list-item {
+    line-height: $spacer-y * 3;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+img.rounded-circle {
+  border: 3px solid;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.logo {
+  height: 30px;
+  position: relative;
+  top: -1px;
+@media screen and (max-width: 535px) {
+  height: 2.4rem;
+  top: 0;
+}
+}
+
+.company-icon {
+  height: 2.1rem;
+  margin-right: .9rem;
+  position: relative;
+  top: -1px;
+}
+
+.navbar {
+  .nav-link {
+    font-weight: 500;
+  }
+}
+
+.btn-conversion {
+  //background: linear-gradient(180deg, $yellow, $green);
+  //border: .3rem solid $choco;
+  min-width: 24rem;
+}
+
+.store-badge {
+  height: 3.6rem;
+  margin: 0 .6rem;
+
+  @media screen and (max-width: 535px)  {
+    display: block;
+    height: 4.8rem;
+    margin: .6rem auto 0 auto;
+  }
+}
+
+.d-none-sp {
+  @media screen and (max-width: 535px)  {
+    display: none !important;
+  }
+}
+
+.d-none-sm {
+  @media screen and (min-width: 535px)  {
+    display: none !important;
+  }
+}
+
+.display3 {
+  font-size: 2.1rem;
+  line-height: 3.6rem;
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-sm;
+}
+
+.jumbotron-link {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.counts {
+  background: rgba($choco, .8);
+  color: #fff;
+  padding: $spacer 0;
+  padding-bottom: 2.4rem;
+  position: relative;
+  z-index: 100;
+}
+
+.btn-primary.btn-conversion {
+  background: linear-gradient(120deg, $yellow, $mint, $mint, $mint, $mint);
+  border: 0;
+
+  transition: all .16s ease;
+
+  &:hover {
+    background: linear-gradient(120deg, $yellow, $yellow) !important;
+  }
+}
+
+.jumbotron {
+  padding-bottom: 0;
+}
+
+.text-muted {
+  color: $gray !important;
+}
+
+.screenshots {
+  border-radius: .5rem .5rem 0 0;
+  border: .6rem solid lighten($choco-light, 30%);
+}
+
+.balloon {
+  background: $choco;
+  border: 0;
+  border-radius: 0 0 .6rem .6rem;
+  color: $white;
+  font-size: 14px;
+  position: relative;
+  top: -6px;
+}
+
+.balloon-arrow {
+  position: absolute;
+  height: 6px;
+  right: 0;
+  left: 0;
+  top: -6px;
+  margin: auto;
+}
+
+.icon-xl {
+  color: $choco-light;
+  font-size: 4.8rem;
+}
+
+@media screen and (max-width: 535px) {
+  .navbar {
+    .container {
+      margin: 0 1.2rem;
+    }
+
+    .navbar-nav {
+
+      .nav-item {
+        display: inline-block;
+      }
+
+      .nav-link {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.navbar-nav {
+  flex-direction: row !important;
+
+  .nav-link {
+    padding: .6rem 1.2rem !important;
+  }
+}
+
+.mt-2-sp {
+@media screen and (max-width: 535px) {
+  margin-top: 2.4rem;
+}
+}
+
+.mt-4-sp {
+@media screen and (max-width: 535px) {
+  margin-top: 4.8rem;
+}
+}
+
+.display-2 {
+@media screen and (max-width: 535px) {
+  font-size: 3.0rem;
+  line-height: 4.8rem;
+}
+}
+
+.display-3 {
+@media screen and (max-width: 535px) {
+  font-size: 1.5rem;
+}
+}
+
+.footer-chatwork {
+  border-bottom: 1px solid #9b9494;
+  padding-bottom: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.fullscreen-base {
+  background: #f6f6f6;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 535px) {
+    background: #fff;
+  }
+}
+
+.container-fullscreen {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 1rem;
+  padding: 7.2rem 6rem;
+  max-width: 432px;
+
+  @media screen and (max-width: 535px) {
+    border: 0;
+    border-radius: 0;
+    max-width: 100%;
+  }
+}
+
+.border-top-1 {
+  border-top: 1px solid #ececec;
+}
+
+.text-sm-down-sm {
+  @media screen and (max-width: 535px) {
+    font-size: 1.3rem !important;
+  }
+}

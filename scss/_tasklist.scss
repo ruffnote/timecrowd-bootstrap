@@ -1,0 +1,161 @@
+.tasklist {
+  background: $gray-lightest;
+}
+
+.task {
+  background: $body-bg;
+  border: $border-width solid $border-color;
+  border-right: 0;
+  border-left: 0;
+  cursor: pointer;
+  padding: .9rem;
+  position: relative;
+
+  &:before {
+    background: rgba($white, 1);
+    content: " ";
+    display: block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 3.6rem;
+  }
+
+  &:last-of-type {
+    border: 0;
+  }
+
+  + .task {
+    margin-top: -1px;
+  }
+
+  &:hover {
+    background: #fbfbfb;
+    cursor: pointer;
+  }
+
+  &:first-child {
+    // border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &:last-child {
+    // border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  .task-header {
+    display: flex;
+    position: relative;
+  }
+
+  .task-icon {
+    font-size: 1.8rem;
+    height: $spacer * 2;
+    margin-right: .6rem;
+    vertical-align: top;
+    position: relative;
+    left: .2rem;
+    transition: all .16s ease-out;
+  }
+
+  .task-icon-start {
+    color: $gray-light;
+  }
+
+  &:hover .task-icon-start {
+    color: $brand-primary;
+  }
+
+  .task-icon-stop {
+    color: $brand-warning;
+  }
+
+  .task-title {
+    font-weight: 500;
+    line-height: $line-height-sm;
+    max-height: $spacer * 3.5;
+    overflow: hidden;
+    padding: .3rem .6rem;
+    position: relative;
+  }
+
+  .task-block {
+    color: $secondary-text-color;
+    display: flex;
+    font-size: $font-size-sm;
+  }
+
+  .task-category {
+    display: flex;
+    margin: 0 $spacer-x / 2 0 .6rem;
+    min-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .category-circle {
+      top: 6px;
+      margin-right: 1.2rem;
+    }
+
+    .task-category-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .task-category-team {
+      margin-left: $spacer / 2;
+      white-space: nowrap;
+    }
+  }
+
+  .task-duration {
+    font-weight: $font-weight-bold;
+    margin: 0 $spacer / 4 0 auto;
+    min-width: $spacer * 6.5;
+    white-space: nowrap;
+
+    i {
+      margin-right: $spacer / 4;
+    }
+  }
+
+  &.logging .task-duration {
+    color: $body-color;
+  }
+
+  .task-controls {
+    background: #fcfcfc;
+    display: none;
+    position: absolute;
+    bottom: .9rem;
+    right: .9rem;
+  }
+
+  &:hover .task-controls {
+    display: block;
+  }
+}
+
+.teamlist {
+  background: $gray-lightest;
+
+  .teamlist-header {
+    color: $secondary-text-color;
+    display: flex;
+    font-size: $font-size-sm;
+    padding: .3rem $spacer;
+
+    .team-title {
+    }
+
+    .team-icon {
+      margin-right: .9rem;
+    }
+
+    .team-status {
+      margin-left: auto;
+    }
+  }
+}

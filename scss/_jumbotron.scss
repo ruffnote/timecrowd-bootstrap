@@ -1,0 +1,21 @@
+.jumbotron {
+  color: $white;
+  padding: $jumbotron-padding 0;
+  margin-bottom: 0;
+  background-color: $jumbotron-bg;
+  @include border-radius($border-radius-lg);
+
+  @include media-breakpoint-up(sm) {
+    padding: $jumbotron-padding 0;
+  }
+}
+
+.jumbotron-hr {
+  border-top-color: darken($jumbotron-bg, 10%);
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  @include border-radius(0);
+}

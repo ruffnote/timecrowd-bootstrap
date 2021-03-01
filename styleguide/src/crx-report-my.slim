@@ -1,0 +1,144 @@
+doctype html
+html lang='ja'
+  head
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    link rel='stylesheet' href='./assets/service.css'
+    link rel='stylesheet' href='./assets/styleguide.css'
+  body
+    div
+      ul.nav.nav-justified.tabbar
+        li.nav-item
+          a.nav-link href="/" 
+            i.dripicons-home
+            span.badge.badge-pill.badge-danger 2
+            span.tabbar-text マイタスク
+        li.nav-item
+          a.nav-link href="member" 
+            i.dripicons-user
+            span.tabbar-text メンバー(4)
+        li.nav-item.active
+          a.nav-link href="report" 
+            i.dripicons-graph-pie
+            span.tabbar-text レポート
+        li.nav-item
+          a.nav-link href="other" 
+            i.dripicons-dots-3
+            span.tabbar-text その他
+      .toolbar
+        ul.nav.nav-pills
+          li.nav-item
+            a.nav-link.active href="#" あなた
+          li.nav-item
+            a.nav-link href="#" チーム            
+        .dropdown.show.ml-1.w-100
+          a.btn.btn-secondary.w-100.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+            | 最近一週間
+      .report-area
+        .report-selector
+          .d-flex-center
+            span.mr-1 概要
+            i.dripicons-chevron-up.icon-sm
+        .report-header
+          .d-flex.mb-1
+            span.avatar
+              img src="http://lorempixel.com/180/180/nature/"
+            span
+              | Flippe Flappo (YOU)
+            .d-flex-right
+              button.btn.btn-secondary
+                i.icon-sm.dripicons-export
+          .report-header-body
+            p.mb-0.text-secondary.text-sm
+              span 最近1週間 
+              span.ml-1
+                | (2017-02-07 から 2017-02-14)
+            p.span.h3.mb-0
+              | 45時間12分 ¥5024,300
+        .report-section-header
+          .d-flex
+            p.h4.lh-lg.mb-0 分析
+            ul.nav.nav-pills.nav-pills-sm.d-flex-right
+              li.nav-item
+                a.nav-link.active
+                  | 時間
+              li.nav-item
+                a.nav-link
+                  | 金額          
+        .report-section
+          .mb-3
+            h4.text-secondary 時系列
+            img src="assets/report-my-graph-times.png" style="width: 100%;"
+          .mb-3
+            h4.text-secondary カテゴリー割合
+            img src="assets/report-my-graph-cat.png" style="width: 100%;"         
+        .report-team-header
+          span.report-team-title ラフノート
+          span.report-team-times 96時間32分
+          span.report-team-cost ¥1,425,000
+        ul.report-tasks
+          li.report-category.category-1
+            .report-category-header
+              span.report-category-title
+                i.dripicons-chevron-up.dropdown-icon
+                | FREEPLUS
+              span.report-category-times 24時間56分
+              span.report-category-cost ¥196,870
+            ul.report-category.report-category-child.category-2
+              .report-category-header
+                span.report-category-title
+                  i.dripicons-chevron-up.dropdown-icon
+                  | JAPAN TIMELINE
+                span.report-category-times 10時間11分
+                span.report-category-cost ¥72,500
+              li.report-task
+                span.report-task-title
+                  | 開発ミーティング
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200
+              li.report-task
+                span.report-task-title
+                  | タスクタイトルタイトルタイトルタイトルタイトル
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200
+              li.report-task
+                span.report-task-title
+                  | タスクタイトルタイトルタイトルタイトルタイトル
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200
+            ul.report-category.report-category-child.category-3
+              .report-category-header
+                span.report-category-title
+                  i.dripicons-chevron-up.dropdown-icon
+                  | GUIDEST
+                span.report-category-times 10時間11分
+                span.report-category-cost ¥72,500
+              li.report-task
+                span.report-task-title
+                  | 開発ミーティング
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200
+              li.report-task
+                span.report-task-title
+                  | タスクタイトルタイトルタイトルタイトルタイトル
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200
+          li.report-category.category-4
+            .report-category-header
+              span.report-category-title
+                i.dripicons-chevron-up.dropdown-icon
+                | Ruffnote
+              span.report-category-times 24時間56分
+              span.report-category-cost ¥196,870
+            ul.report-tasks
+              li.report-task
+                span.report-task-title
+                  | 開発ミーティング
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200
+              li.report-task
+                span.report-task-title
+                  | タスクタイトルタイトルタイトルタイトルタイトル
+                span.report-category-times 3時間12分
+                span.report-category-cost ¥24,200                        
+          

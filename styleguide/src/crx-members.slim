@@ -1,0 +1,163 @@
+doctype html
+html lang='ja'
+  head
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width,initial-scale=1'
+    link rel='stylesheet' href='./assets/service.css'
+    link rel='stylesheet' href='./assets/styleguide.css'
+  body
+    div
+      ul.nav.nav-justified.tabbar
+        li.nav-item
+          a.nav-link href="/" 
+            i.dripicons-home
+            span.badge.badge-pill.badge-danger 2
+            span.tabbar-text マイタスク
+        li.nav-item.active
+          a.nav-link href="member" 
+            i.dripicons-user
+            span.tabbar-text メンバー(4)
+        li.nav-item
+          a.nav-link href="report" 
+            i.dripicons-graph-pie
+            span.tabbar-text レポート
+        li.nav-item
+          a.nav-link href="other" 
+            i.dripicons-dots-3
+            span.tabbar-text その他
+      .toolbar
+        ul.nav.nav-pills
+          li.nav-item
+            a.nav-link href="#"
+              | リアルタイム
+          li.nav-item
+            a.nav-link.active href="#"
+              | スケジュール
+        .toolbar-right
+          button.btn.btn-secondary
+            span.btn-icon
+              i.dripicons-search.icon-md
+      .datebar
+        .datebar-header
+          span.date-icon
+            i.fa.fa-check-circle-o
+          span.current-date-title 今日
+          span.current-date-status 
+            span.current-date-operation-times 6時間30分 
+            | / 
+            span.current-date-cost ¥25,000
+        .datebar-controls
+          button.btn.btn-secondary.btn-sm.calendar type="button" 
+            span.btn-icon
+              i.dripicons-calendar.icon-sm
+      .content-area
+        .teamlist
+          .teamlist-header
+            span.team-icon
+              i.fa.fa-users
+            span.team-title
+              | タイムクラウド株式会社
+            span.team-status
+              | 36時間24分
+          .memberlist
+            .member
+              .member-header
+                .member-name
+                  span.avatar.avatar-info
+                    img src="http://lorempixel.com/360/360/nature/"
+                    span.avatar-status
+                      i.fa.fa-tint
+                  | Peter Flatterna
+              .member-block
+                .member-status
+                  span.member-times
+                    span.member-operation-time.text-warning
+                      | 8時間32分
+                    |&nbsp;/&nbsp;
+                    span.member-scheduled-time
+                      | 7時間0分
+                  span.member-tasks
+                    i.fa.fa-repeat
+                    | 1
+                    i.fa.fa-play-circle
+                    | 6
+            .member
+              .member-header
+                .member-name
+                  span.avatar
+                    img src="http://lorempixel.com/400/400/nature/"
+                  | Ricky Christensen
+              .member-block
+                .member-status
+                  span.member-times
+                    span.member-operation-time
+                      | 6時間32分
+                    |&nbsp;/&nbsp;
+                    span.member-scheduled-time
+                      | 7時間0分
+                  span.member-tasks
+                    i.fa.fa-repeat
+                    | 3
+                    i.fa.fa-play-circle
+                    | 12
+            .member.disabled
+              .member-header
+                .member-name
+                  span.avatar.disabled
+                    img src="http://lorempixel.com/610/610/nature/"
+                  | McDonald 3rd
+              .member-block
+                .member-status
+                  span.member-times
+                    span.member-scheduled-time
+                      | 非稼働
+                      
+        .teamlist
+          .teamlist-header
+            span.team-icon
+              i.fa.fa-users
+            span.team-title
+              | Ruffnote
+            span.team-status
+              | 36時間24分
+          .memberlist
+            .member
+              .member-header
+                .member-name
+                  span.avatar.avatar-info
+                    img src="http://lorempixel.com/490/490/nature/"
+                    span.avatar-status
+                      i.fa.fa-tint
+                  | Peter Flatterna
+              .member-block
+                .member-status
+                  span.member-times
+                    span.member-operation-time.text-warning
+                      | 8時間32分
+                    |&nbsp;/&nbsp;
+                    span.member-scheduled-time
+                      | 7時間0分
+                  span.member-tasks
+                    i.fa.fa-repeat
+                    | 1
+                    i.fa.fa-play-circle
+                    | 6
+            .member
+              .member-header
+                .member-name
+                  span.avatar
+                    img src="http://lorempixel.com/210/210/nature/"
+                  | Ricky Christensen
+              .member-block
+                .member-status
+                  span.member-times
+                    span.member-operation-time
+                      | 6時間32分
+                    |&nbsp;/&nbsp;
+                    span.member-scheduled-time
+                      | 7時間0分
+                  span.member-tasks
+                    i.fa.fa-repeat
+                    | 3
+                    i.fa.fa-play-circle
+                    | 12

@@ -1,0 +1,72 @@
+@import "webfont";
+
+.gd-section {
+  margin: 36px 0;
+}
+
+.gd-title {
+  border-bottom: 2px solid #aaa;
+  font-size: 24px;
+  margin: 24px 0;
+  padding: 12px 0;
+}
+
+.gd-header {
+  font-size: 18px;
+  margin: 12px 0;
+  padding: 12px 0;
+}
+
+.gd-block {
+  border: 3px solid #f4f4f4;
+  margin: 24px 0;
+  padding: 24px 12px;
+  position: relative;
+
+  .gd-col {
+    border-left: 1px solid #eaeaea;
+    padding: 0 24px;
+  }
+
+  .gd-col:first-child {
+    border-left: 0;
+  }
+
+  &.okay {
+    border-color: #4CBED9;
+
+    &:before {
+      background: #fff;
+      content: "OK";
+      color: #4CBED9;
+      display: block;
+      padding: 0 6px;
+      position: absolute;
+      left: 12px;
+      top: -14px;
+    }
+  }
+
+  &.negative {
+    border-color: #E8744A;
+
+    &:before {
+      background: #fff;
+      content: "NG";
+      color: #E8744A;
+      display: block;
+      padding: 0 6px;
+      position: absolute;
+      left: 12px;
+      top: -14px;
+    }
+  }
+}
+
+.gd-chrome-frame {
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 6px 2px rgba(0,0,0,.1);
+  margin: 24px auto;
+  width: 480px;
+}

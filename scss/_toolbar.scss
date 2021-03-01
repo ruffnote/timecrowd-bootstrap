@@ -1,0 +1,16 @@
+.toolbar {
+  background: $border-color;
+  border-bottom: $border-width solid $separator-color;
+  display: flex;
+  min-height: $spacer * 3;
+  padding: $spacer / 2;
+
+  .btn {
+    height: $spacer * 3;
+  }
+
+  .toolbar-right {
+    position: absolute;
+    right: $spacer / 2;
+  }
+}

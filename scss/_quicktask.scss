@@ -1,0 +1,44 @@
+.quicktask {
+  background: $gray-lighter;
+  border-bottom: 1px solid $separator-color;
+  position: relative;
+
+  .input-group {
+    padding: $spacer / 2;
+  }
+}
+
+.quicktask-title {
+
+  &:focus {
+    background: $component-focus-bg;
+    opacity: 1;
+
+    &::placeholder {
+      color: $gray-light;
+      opacity: 1;
+    }
+  }
+
+  &::placeholder {
+    color: $brand-primary;
+  }
+}
+
+.quicktask-start,
+.quicktask-stop {
+  padding: 0;
+}
+
+.quicktask-start {
+  border-radius: 0 $border-radius $border-radius 0;
+  height: $spacer * 3;
+  min-width: $spacer * 3;
+  width: $spacer * 3;
+}
+
+.quicktask-stop {
+  height: $spacer * 3;
+  min-width: $spacer * 3;
+  width: $spacer * 3;
+}
