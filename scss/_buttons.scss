@@ -4,8 +4,12 @@
 // Base styles
 //
 
+button {
+  box-sizing: border-box;
+  font-family: $font-family-base;
+}
+
 .btn {
-  cursor: pointer;
   display: inline-block;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
@@ -13,10 +17,10 @@
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
+  cursor: pointer;
   border: $input-btn-border-width solid transparent;
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
   @include transition($btn-transition);
-  transition: all .16s ease;
 
   // Share hover and focus styles
   @include hover-focus {
@@ -25,22 +29,37 @@
   &:focus,
   &.focus {
     outline: 0;
-    // box-shadow: $btn-focus-box-shadow;
+    box-shadow: $btn-focus-box-shadow;
   }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
     cursor: $cursor-disabled;
-    opacity: .65;
     @include box-shadow(none);
+    @include transition($btn-disabled-transition);
+
+    .icon {
+      color: $btn-link-disabled-color;
+    }
   }
 
   &:active,
   &.active {
     background-image: none;
     @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
-    transform: scale(.97);
+  }
+
+  & + .btn {
+    margin-left: .6rem;
+  }
+
+  .icon-lg {
+    top: -1px;
+  }
+
+  @include is-mobile-app() {
+    padding: $btn-padding-y-touch $btn-padding-x-touch;
   }
 }
 
@@ -57,32 +76,22 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-  background: linear-gradient($btn-primary-bg, darken($btn-primary-bg, 4%));
-  border-color: darken($btn-primary-bg, 4%);
-  &.focus {
-    box-shadow: none;
-  }
 }
 .btn-secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-  background:  linear-gradient($white, #fbfbfb);
-  &:hover,
-  &.hover {
-    background: $white;
-    background: linear-gradient($white, $white);
-    border-color: $separator-color;
+  background: $secondary-link-bg;
+
+  &:hover {
     color: $link-color;
   }
 
-  &:active {
-    background: darken($gray-lightest, 3%);
+  &.active {
+    color: $link-color;
   }
 
-  &.active,
-  .show > &.dropdown-toggle {
-    background: $white;
-    border-color: $separator-color;
-    color: $link-color;
+  &:disabled,
+  &.disabled {
+    color: $text-muted;
   }
 }
 .btn-info {
@@ -93,8 +102,6 @@ fieldset[disabled] a.btn {
 }
 .btn-warning {
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-  background: linear-gradient($btn-warning-bg, darken($btn-warning-bg, 3%));
-  border-color: darken($btn-warning-bg, 3%);
 }
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
@@ -127,9 +134,10 @@ fieldset[disabled] a.btn {
 
 // Make a button look and behave like a link
 .btn-link {
-  font-weight: $font-weight-normal;
+  align-items: center;
+  font-weight: $font-weight-medium;
   color: $link-color;
-  border-radius: 0;
+  border-radius: $btn-border-radius;
 
   &,
   &:active,
@@ -149,7 +157,11 @@ fieldset[disabled] a.btn {
   @include hover-focus {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
-    background-color: transparent;
+    background-color: $component-hover-bg;
+    box-shadow: none;
+  }
+  &:active {
+    background-color: $component-active-bg;
   }
   &:disabled {
     color: $btn-link-disabled-color;
@@ -167,11 +179,17 @@ fieldset[disabled] a.btn {
 
 .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $btn-border-radius-lg);
+  @include is-mobile-app {
+    padding: $btn-padding-y-lg-touch $btn-padding-x-lg-touch;
+  }
 }
 .btn-sm {
   // line-height: ensure proper height of button next to small input
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+  @include is-mobile-app {
+    padding: $btn-padding-y-sm-touch $btn-padding-x-sm-touch;
+  }
   line-height: $line-height-sm;
 }
 
@@ -188,6 +206,7 @@ fieldset[disabled] a.btn {
 // Vertically space out multiple block buttons
 .btn-block + .btn-block {
   margin-top: $btn-block-spacing-y;
+  margin-left: 0;
 }
 
 // Specificity overrides
@@ -199,22 +218,80 @@ input[type="button"] {
   }
 }
 
-.btn + .btn {
-  margin-left: $spacer-x / 2;
+// by Context
+.btn-major-action {
+  min-width: 7.2rem;
+
+  @include media-breakpoint-down(sm) {
+    min-width: 4.8rem;
+  }
 }
 
-.btn,
-.dropdown-toggle {
-  .btn-icon {
-    margin: 0;
-    position: relative;
+.btn-circle {
+  border-radius: 50%;
+  padding: 0;
+  text-align: center;
+  line-height: 3.6rem;
+  height: 3.6rem;
+  min-height: 3.6rem;
+  min-width: 3.6rem;
+  width: 3.6rem;
+
+  @include is-mobile-app() {
+    padding: 0;
   }
 
-  .btn-icon + .btn-text {
-    margin-left: $spacer-x / 4;
+  &.btn-sm {
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+    line-height: 3.2rem;
+    height: 3.2rem;
+    min-height: 3.2rem;
+    min-width: 3.2rem;
+    width: 3.2rem;
   }
 
-  .btn-text + .btn-icon {
-    margin-left: $spacer-x / 4;
+  &.btn-lg {
+    line-height: 4.2rem;
+    height: 4.2rem;
+    min-height: 4.2rem;
+    min-width: 4.2rem;
+    width: 4.2rem;
+  }
+
+  .icon {
+    top: -1px;
+  }
+}
+
+.btn-toggler {
+  background: $white;
+  border-radius: 50%;
+  height: 3rem;
+  line-height: 3rem;
+  min-width: 3rem;
+  padding: 0;
+  position: relative;
+  width: 3rem;
+
+  &:focus,
+  &:active {
+    background: $white;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:hover {
+    background: $component-hover-bg;
+  }
+
+  &.on {
+    background: $component-active-bg;
+    color: $link-color;
+  }
+
+  .icon {
+    top: -1px;
   }
 }

@@ -10,7 +10,6 @@
   .form-control {
     // Ensure that the input is always above the *appended* addon button for
     // proper border colors.
-    height: 3.6rem;
     position: relative;
     z-index: 2;
     flex: 1 1 auto;
@@ -20,7 +19,8 @@
     margin-bottom: 0;
 
     // Bring the "active" form control to the front
-    @include hover-focus-active {
+    &:focus,
+    &:active {
       z-index: 3;
     }
   }
@@ -43,60 +43,8 @@
 .input-group-btn {
   white-space: nowrap;
   vertical-align: middle; // Match the inputs
-
-  .btn {
-    font-weight: $font-weight-normal;
-  }
-
-  &.drawer {
-    max-width: 28%;
-    min-width: 28%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    transition: all .16s ease-in-out;
-    white-space: nowrap;
-    width: 100%;
-
-    &.drawer-15 {
-      max-width: 15%;
-      min-width: 15%;
-    }
-
-    &.drawer-25 {
-      max-width: 25%;
-      min-width: 25%;
-    }
-
-    &.drawer-30 {
-      max-width: 30%;
-      min-width: 30%;
-    }
-
-    &.drawer-50 {
-      max-width: 50%;
-      min-width: 50%;
-    }
-
-    &:hover {
-      max-width: 71%;
-      min-width: 71%;
-    }
-
-    .btn {
-      border-right: 0;
-      text-overflow: ellipsis;
-      text-align: left;
-      overflow: hidden;
-      margin-right: 0;
-      white-space: nowrap;
-      width: 100%;
-
-      &:hover {
-        color: $body-color;
-      }
-    }
-  }
 }
+
 
 // Sizing options
 //
@@ -214,18 +162,36 @@
   &:not(:last-child) {
     > .btn,
     > .btn-group {
-      margin-right: -1.5px;
+      margin-right: (-$input-btn-border-width);
     }
   }
   &:not(:first-child) {
     > .btn,
     > .btn-group {
       z-index: 2;
-      margin-left: -1px;
+      margin-left: (-$input-btn-border-width);
       // Because specificity
       @include hover-focus-active {
         z-index: 3;
       }
+    }
+  }
+
+  .btn-toggler {
+    border: 0;
+    border-top: $border-width solid $separator-color;
+    border-bottom: $border-width solid $separator-color;
+    margin-right: 1px !important;
+    min-width: 4.8rem;
+    opacity: 1;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $white;
+      border-top: $border-width solid $separator-color;
+      border-bottom: $border-width solid $separator-color;
+      z-index: 2 !important;
     }
   }
 }

@@ -1,0 +1,39 @@
+#payjp_checkout_box input[type=button] {
+  display: inline-block !important;
+  font-weight: $btn-font-weight !important;
+  line-height: $btn-line-height !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  user-select: none !important;
+  cursor: pointer !important;
+  color: $btn-secondary-color !important;
+  border: $input-btn-border-width solid $btn-secondary-border !important;
+  padding: $btn-padding-y, $btn-padding-x!important;
+  font-size: $font-size-base !important;
+  border-radius: $border-radius !important;
+  background: $secondary-link-bg !important;
+  outline: none !important;
+  transition: $transition-base !important;
+
+  $active-border: darken($btn-secondary-border, 10%);
+
+  // Hover and focus styles are shared
+  &:hover {
+    color: $link-color !important;
+    background-color: $white !important;
+    border-color: darken($btn-secondary-border, 10%) !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($btn-secondary-border, .5) !important;
+  }
+
+  &:active {
+    color: $btn-secondary-color !important;
+    background-color: #f0f0f0 !important;
+    background-image: none !important; // Remove the gradient for the pressed/active state
+    border-color: $active-border !important;
+    transform: scale(.99) !important;
+  }
+}

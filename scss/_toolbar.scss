@@ -1,16 +1,23 @@
 .toolbar {
-  background: $border-color;
+  background: $gray-lightest;
   border-bottom: $border-width solid $separator-color;
-  display: flex;
-  min-height: $spacer * 3;
-  padding: $spacer / 2;
+  box-sizing: border-box;
+  height: 6rem;
+  padding: .9rem;
+  position: fixed;
+  transition: all .16s ease-in-out;
+  width: calc(100% - 21.4rem);
+  z-index: $zindex-toolbar;
 
-  .btn {
-    height: $spacer * 3;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
   }
+}
 
-  .toolbar-right {
-    position: absolute;
-    right: $spacer / 2;
+.toolbar-hidden-touch {
+  @include is-mobile-app {
+    border: 0;
+    height: 0;
+    padding: 0;
   }
 }

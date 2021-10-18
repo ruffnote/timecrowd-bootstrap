@@ -10,25 +10,22 @@
     margin-top: -1px;
   }
 
-  &:first-child {
-    // border-radius: $border-radius $border-radius 0 0;
-  }
-
-  &:last-child {
-    // border-radius: 0 0 $border-radius $border-radius;
-  }
-
   &.disabled {
   }
 
   .member-name {
-    font-weight: 500;
+    font-weight: $font-weight-medium;
+
+    &.disabled {
+      color: $text-muted;
+    }
   }
 
   .member-block {
     display: flex;
+    margin-left: auto;
     font-size: $font-size-sm;
-    color: $secondary-text-color;
+    color: $secondary-link-color;
   }
 
   .member-status {
@@ -47,5 +44,8 @@
   }
 }
 
-.memberlist {
+.task-members {
+  flex-wrap: wrap;
+  margin-bottom: .9rem;
+  margin-top: 0;
 }

@@ -3,16 +3,33 @@
 //
 
 .alert {
-  font-size: $font-size-sm;
-  line-height: $line-height-sm;
-  padding: $alert-padding-y $alert-padding-x;
+  display: block;
+  padding: 0;
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
-  padding-right: 3.6rem;
+  box-shadow: $box-shadow-modal;
+  position: fixed;
+  justify-content: center;
+  align-items: flex-start;
+  top: 8.4rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  min-height: 4.2rem;
+  width: calc(100% - 2.4rem);
+  max-width: 840px;
+  z-index: $zindex-alert;
+
   @include border-radius($alert-border-radius);
 
-  strong {
-    margin-right: $spacer / 2;
+  &.alert-bottom {
+    top: auto;
+    bottom: 2.4rem;
+  }
+
+  .close {
+    opacity: 1;
+    margin: .6rem .6rem 0 0;
   }
 }
 
@@ -22,10 +39,26 @@
   color: inherit;
 }
 
+.alert-body {
+  font-weight: $font-weight-medium;
+  padding: 1.2rem .6rem 1.2rem 1.5rem;
+  width: 100%;
+}
+
+.alert-footer {
+  background: $gray-lighter;
+  border-top: $border-width solid $border-color;
+  border-radius: 0 0 $border-radius $border-radius;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+  padding: .9rem;
+}
+
 // Provide class for links that match alerts
 .alert-link {
+  color: $link-color;
   font-weight: $alert-link-font-weight;
-  padding: 0 $spacer-x / 2;
 }
 
 
@@ -34,30 +67,21 @@
 // Expand the right padding and account for the close button's positioning.
 
 .alert-dismissible {
-  padding-right: 3.6rem;
-
   // Adjust close link position
   .close {
-    color: $white;
-    position: absolute;
+    line-height: $line-height-base;
+    margin-left: auto;
+    position: relative;
+    opacity: 1;
     outline: none;
-    opacity: .8;
-    height: 3.0rem;
-    line-height: 3.0rem;
-    transition: all .16s ease;
-    text-shadow: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3.6rem;
+    color: inherit;
+    vertical-align: top;
+    height: 2.4rem;
+    min-width: 2.4rem;
+    width: 2.4rem;
 
-    &:hover {
-      color: $white;
-      opacity: 1;
-    }
-
-    .icon-sm {
-      top: 2px;
+    .icon {
+      top: -2px;
     }
   }
 }
@@ -69,17 +93,28 @@
 
 .alert-success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+  .close {
+    color: $brand-success;
+  }
 }
+
 .alert-info {
   @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+  .close {
+    color: $brand-info;
+  }
 }
+
 .alert-warning {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+  .close {
+    color: $brand-warning;
+  }
 }
+
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
-
-  .alert-link {
-    color: $alert-danger-text;
+  .close {
+    color: $brand-danger;
   }
 }

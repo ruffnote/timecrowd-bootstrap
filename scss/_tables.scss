@@ -3,25 +3,25 @@
 //
 
 .table {
-  border: 0;
   width: 100%;
   max-width: 100%;
   margin-bottom: $spacer;
 
   th,
   td {
-    padding: $table-cell-padding $table-cell-padding;
-    vertical-align: top;
+    padding: $table-cell-padding;
+    vertical-align: middle;
     border-top: $table-border-width solid $table-border-color;
   }
 
-  thead {
-    background: $table-head-bg;
-  }
-
   thead th {
+    background: $table-head-bg;
+    color: $table-head-color;
+    font-size: $font-size-sm;
     vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    border-top: 0;
+    border-bottom: 1px solid $table-border-color;
+    padding: .4rem $table-cell-padding;
   }
 
   tbody + tbody {
@@ -30,6 +30,11 @@
 
   .table {
     background-color: $body-bg;
+  }
+
+  th.table-status {
+    padding-left: 1.8rem;
+    width: 3.6rem;
   }
 }
 
@@ -72,7 +77,7 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table-striped {
-  tbody tr:nth-of-type(odd) {
+  tbody tr:nth-of-type(even) {
     background-color: $table-bg-accent;
   }
 }
@@ -86,6 +91,12 @@
   tbody tr {
     @include hover {
       background-color: $table-bg-hover;
+    }
+
+    td {
+      @include hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -102,7 +113,6 @@
 @include table-row-variant(info, $state-info-bg);
 @include table-row-variant(warning, $state-warning-bg);
 @include table-row-variant(danger, $state-danger-bg);
-
 
 // Inverse styles
 //

@@ -1,0 +1,89 @@
+.expansion-panel {
+  border-top: $border-width solid $border-color;
+}
+
+.expansion-panel-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  padding: .3rem .6rem;
+
+  @include text-overflow();
+
+  &:hover .btn-toggler {
+    background: $component-hover-bg;
+    color: $body-color;
+  }
+
+  &:active .btn-toggler {
+    background: $component-active-bg;
+    color: $body-color;
+  }
+
+  &.expansion-panel-header-action {
+    .btn-toggler {
+      background: transparent;
+    }
+
+    &:hover {
+      background: $component-hover-bg;
+    }
+
+    &:active {
+      background: $component-active-bg;
+    }
+
+    &:hover .btn-toggler {
+      background: transparent;
+    }
+
+    &:active .btn-toggler {
+      background: transparent;
+    }
+  }
+
+  .expansion-panel-header-body {
+    padding-left: .6rem;
+    width: calc(100% - 36px);
+  }
+
+  &.expand .expansion-panel-preview {
+    display: none;
+  }
+
+  &.list-group-header {
+    .expansion-panel-header-body {
+      display: inherit;
+      width: 80%;
+    }
+  }
+}
+
+.expansion-panel-label {
+  color: $secondary-link-color;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  line-height: 3.6rem;
+  margin-bottom: 0;
+
+  @include text-overflow();
+
+  .icon {
+    top: -1px;
+  }
+}
+
+.expansion-panel-body {
+  &.expand {
+    animation: fadeInDownSmall $transition-time-base ease-out;
+  }
+
+  &.animated {
+    animation: none;
+  }
+
+  &.shrink {
+    display: none;
+  }
+}

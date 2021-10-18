@@ -1,0 +1,114 @@
+.report-detailed-header {
+  display: flex;
+  background: $gray-lightest;
+  border-top: 1px solid $border-color;
+  padding: .9rem 4.8rem .9rem 1.8rem;
+  font-weight: $font-weight-bold;
+}
+
+.report-detailed-title {
+  font-weight: $font-weight-bold;
+  width: 100%;
+
+  @include text-overflow();
+}
+
+.report-detailed-hours,
+.report-detailed-amount {
+  width: 15rem;
+}
+
+.report-category {
+  cursor: pointer;
+
+  .report-tasks {
+    display: none;
+  }
+
+  .report-category-child {
+    display: none;
+  }
+
+  &.expand .report-tasks {
+    display: block;
+  }
+
+  &.expand .report-category-child {
+    display: block;
+  }
+}
+
+.report-category .report-category:last-of-type {
+  border-bottom: $border-width solid $border-color;
+}
+
+.report-category-header {
+  display: flex;
+  padding-right: 1.2rem;
+  width: 100%;
+}
+
+.report-category-title {
+  color: $body-color;
+  font-weight: $font-weight-bold;
+  width: 100%;
+
+  @include text-overflow();
+}
+
+.report-category-hours,
+.report-category-amount {
+  color: $body-color;
+  font-weight: $font-weight-normal;
+  min-width: 12rem;
+}
+
+.report-task-list {
+  padding: 1.2rem;
+  padding-top: 0;
+}
+
+.report-task {
+  padding-right: 3.6rem;
+  justify-content: flex-end;
+}
+
+.report-task-title {
+  padding-right: 1.2rem;
+  flex: 1 0 auto;
+  width: 0;
+  @include text-overflow();
+}
+
+.report-task-hours,
+.report-task-amount {
+  color: $secondary-link-color;
+  font-weight: $font-weight-normal;
+  min-width: 12rem;
+}
+
+@include media-breakpoint-down(xs) {
+  .report-detailed-header,
+  .report-category-header,
+  .report-task {
+    display: block;
+    line-height: 2.0rem;
+
+    .report-detailed-title,
+    .report-detailed-hours,
+    .report-detailed-amount,
+    .report-category-title,
+    .report-category-hours,
+    .report-category-amount,
+    .report-task-title,
+    .report-task-hours,
+    .report-task-amount {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .report-category-header {
+    padding: 0.5rem 0;
+  }
+}

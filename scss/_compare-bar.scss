@@ -1,0 +1,8 @@
+.compare-bar {
+  display: inline-flex;
+
+  &.compare-bar-md {
+    border-radius: 0 2px 2px 0;
+    height: 1rem;
+  }
+}

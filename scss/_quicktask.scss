@@ -1,44 +1,36 @@
-.quicktask {
-  background: $gray-lighter;
-  border-bottom: 1px solid $separator-color;
-  position: relative;
-
-  .input-group {
-    padding: $spacer / 2;
-  }
+.quicktask-current-wrap {
+  background: transparent;
+  border-radius: 0;
+  color: $body-color;
+  height: 4rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% - 4.8rem);
 }
 
-.quicktask-title {
+.quicktask-current {
+  display: flex;
+  padding-right: 1.2rem;
+  padding-left: 1.8rem;
+  width: calc(100% - 3.6rem);
 
-  &:focus {
-    background: $component-focus-bg;
-    opacity: 1;
+  .current-title {
+    @include text-overflow();
+  }
 
-    &::placeholder {
-      color: $gray-light;
-      opacity: 1;
+  .current-elapsed {
+    font-weight: $font-weight-bold;
+    margin-left: auto;
+    min-width: 10.2rem;
+    padding-left: 1.2rem;
+
+    .icon {
+      top: -1px;
     }
   }
 
-  &::placeholder {
-    color: $brand-primary;
+  .current-category-name {
+    display: none;
   }
-}
-
-.quicktask-start,
-.quicktask-stop {
-  padding: 0;
-}
-
-.quicktask-start {
-  border-radius: 0 $border-radius $border-radius 0;
-  height: $spacer * 3;
-  min-width: $spacer * 3;
-  width: $spacer * 3;
-}
-
-.quicktask-stop {
-  height: $spacer * 3;
-  min-width: $spacer * 3;
-  width: $spacer * 3;
 }

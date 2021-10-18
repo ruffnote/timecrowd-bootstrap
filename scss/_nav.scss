@@ -8,15 +8,60 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+
+  @include media-breakpoint-up(sm) {
+    padding: .6rem;
+
+    .nav-link {
+      margin: .3rem;
+    }
+  }
 }
 
 .nav-link {
+  color: $body-color;
   display: block;
+  font-weight: $font-weight-medium;
   padding: $nav-link-padding;
-  white-space: nowrap;
+  position: relative;
+  transition: $transition-base;
+
+  @include text-overflow();
 
   @include hover-focus {
-    text-decoration: none;
+    color: $body-color;    
+  }
+
+  @include is-crx-pc {
+    @include hover-focus {
+      background: $nav-link-hover-bg;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    border-radius: $border-radius;
+
+    &:active,
+    &.active,
+    &.active:hover {
+      background: $component-active-bg;
+      border-color: $nav-active-link-bg;
+      background: $nav-active-link-bg;
+      color: $nav-active-link-color;
+      cursor: default;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base-mobile;
+    padding: 1.2rem 1.8rem;
+
+    .icon {
+      top: -2px;
+    }
   }
 
   // Disabled state lightens text and removes hover/tab effects
@@ -24,45 +69,71 @@
     color: $nav-disabled-link-color;
     cursor: $cursor-disabled;
   }
+
+  &.depth-1 {
+    padding-left: 3rem;
+  }
+
+  &.depth-2 {
+    padding-left: 4.8rem;
+  }
+
+  &.depth-3 {
+    padding-left: 6.6rem;
+  }
+
+  &.depth-4 {
+    padding-left: 8.4rem;
+  }
+
+  .icon {
+    font-size: 1.6rem;
+    position: relative;
+    top: -1px;
+  }
 }
 
+.nav .loading-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
 //
 // Tabs
 //
 
 .nav-tabs {
-  background: linear-gradient(#fff,#fbfbfb);
-  border-bottom: 1px solid $separator-color;
-  padding: 0 $spacer / 2;
-  padding-bottom: 0;
+  background: $body-bg;
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+  padding: 0;
 
   .nav-item {
-    margin-bottom: -$nav-tabs-border-width;
+    margin: 0;
 
     & + .nav-item {
-      margin-left: .1rem;
+      margin-left: 1px;
     }
   }
 
   .nav-link {
-    background: linear-gradient(#fff,#fbfbfb);
-    // border-bottom: $border-width solid $nav-tabs-border-color;
-    border-bottom: 1px solid transparent;
-    color: $gray-dim;
-    // @include border-top-radius($nav-tabs-border-radius);
-    padding-top: 1.5rem;
-    margin-top: 1px;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    color: $secondary-link-color;
+    cursor: pointer;
+    margin: 0;
     position: relative;
-    top: -1px;
+    top: $nav-tabs-border-width;
+
+    @include border-top-radius($nav-tabs-border-radius);
 
     @include hover-focus {
-      border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
-    }
-
-    &:hover {
-      border-bottom-color: transparent;
-      color: $link-color;
+      background: $nav-tabs-active-link-hover-bg;
+      border-bottom-color: $nav-tabs-link-hover-border-color;
+      color: $nav-tabs-link-hover-border-color;
     }
 
     &.disabled {
@@ -70,15 +141,22 @@
       background-color: transparent;
       border-color: transparent;
     }
+
+    & + .nav-link {
+      margin-left: 1px;
+    }
   }
 
   .nav-link.active,
   .nav-item.show .nav-link {
     color: $nav-tabs-active-link-hover-color;
-    background: linear-gradient(#fff,#fbfbfb);
-    // border-bottom-color: ;
-    border-bottom: 2px solid $nav-tabs-active-link-hover-border-color;
-    font-weight: $font-weight-bold;
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom-color: $nav-tabs-active-link-hover-border-color;
+
+    @include hover-focus {
+      color: $nav-tabs-active-link-hover-color;
+    }
   }
 
   .dropdown-menu {
@@ -95,53 +173,62 @@
 //
 
 .nav-pills {
+  background: $secondary-link-bg;
+  border: 0;
+  border-radius: $nav-pills-border-radius;
+  display: inline-flex;
+  line-height: 4rem;
+  height: 4.2rem;
+  overflow: hidden;
+  padding: 0;
+
+  .nav-item {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
 
   .nav-link {
-    box-sizing: border-box;
-    color: $gray-dim;
+    background: $secondary-link-bg;
+    border: $border-width solid $separator-color;
+    border-radius: 0;
+    color: $secondary-link-color;
+    cursor: pointer;
     font-size: $font-size-sm;
     font-weight: $font-weight-bold;
-    height: $spacer * 3;
-    border: $border-width solid $separator-color;
-    background: linear-gradient(#f9f9f9, #f6f6f6);
-    transition: all .16s ease;
+    height: 100%;
+    margin: 0;
+    margin-left: -1px;
+    overflow: hidden;
+    text-align: center;
+    transition: $transition-base;
+    padding: $nav-pills-link-padding;
 
     &:hover {
-      background: linear-gradient(#fbfbfb, #fbfbfb);
-      color: $link-color;
+      background: $white;
+      color: $body-color;
     }
 
-    &:active {
-      background: darken($gray-lightest, 3%);
-      transform: scale(.99);
-
-      &.active {
-        transform: none;
-      }
+    .icon {
+      top: -1px;
     }
   }
 
-  .nav-item {
-    + .nav-item {
-      margin-left: -1px;
-    }
+  .nav-item:first-child .nav-link {
+    margin-left: 0;
+    border-radius: $nav-pills-border-radius 0 0 $nav-pills-border-radius;
+  }
 
-    &:first-child .nav-link {
-      border-radius: $border-radius 0 0 $border-radius;
-    }
-
-    &:last-child .nav-link {
-      border-radius: 0 $border-radius $border-radius 0;
-    }
+  .nav-item:last-child .nav-link {
+    border-radius: 0 $nav-pills-border-radius $nav-pills-border-radius 0;
   }
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: $link-color;
+    color: $nav-pills-active-link-color;
     cursor: default;
-    background: $white;
-    position: relative;
-    z-index: 3;
+    border-color: $nav-pills-active-link-bg;
+    background: $nav-pills-active-link-bg;
   }
 }
 
@@ -151,6 +238,8 @@
 //
 
 .nav-fill {
+  width: 100%;
+
   .nav-item {
     flex: 1 1 auto;
     text-align: center;
@@ -170,7 +259,11 @@
 // Hide tabbable panes to start, show them when `.active`
 
 .tab-content {
+  position: relative;
+
   > .tab-pane {
+    overflow-y: scroll;
+    position: relative;
     display: none;
   }
   > .active {

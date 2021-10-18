@@ -32,6 +32,8 @@
 @import "mixins/text-truncate";
 @import "mixins/transforms";
 @import "mixins/visibility";
+@import "mixins/pseudo";
+@import "mixins/overflow";
 
 // // Components
 @import "mixins/alert";
@@ -55,3 +57,4 @@
 @import "mixins/grid-framework";
 @import "mixins/grid";
 @import "mixins/float";
+@import "mixins/device";

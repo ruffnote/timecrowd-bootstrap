@@ -1,0 +1,52 @@
+.subpane {
+  background: $white;
+  height: 100%;
+  min-height: 100vh;
+  border-left: 1px solid $separator-color;
+  overflow: auto;
+  padding: 0;
+  padding-bottom: $toolbar-height;
+  position: fixed;
+  right: 0;
+  -webkit-overflow-scrolling: touch;
+  z-index: $zindex-subpane;
+
+  &.col-md-3 {
+    width: calc(25% - 5.4rem);
+  }
+
+  @include media-breakpoint-down(sm) {
+    border: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $zindex-modal;
+
+    &.open {
+      transform: translate3d(0,0,0);
+      animation: fadeIn ease-out $transition-time-base;
+    }
+
+    &.hide {
+      transform: translate3d(0,-100%,0);
+      //animation: slideOutRight ease-out $transition-time-base;
+    }
+
+    &.col-12 {
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+.subpane-body {
+  width: 100%;
+}
+
+.subpane-calendar {
+  width: calc(33.33333% - 7.2rem);
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}

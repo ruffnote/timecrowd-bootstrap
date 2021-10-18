@@ -70,11 +70,20 @@ html {
 
   // Changes the default tap highlight to be completely transparent in iOS.
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  font-size: $font-size-html;
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
   font-family: $font-family-base;
   font-size: $font-size-base;
+  font-feature-settings: "lnum", "jp04";
+  font-kerning: normal;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
   // Go easy on the eyes and use something other than `#000` for text
@@ -295,7 +304,7 @@ th {
 label {
   // Allow labels to use `margin` for spacing.
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: .6rem;
 }
 
 // Work around a Firefox/IE bug where the transparent `button` background
@@ -378,9 +387,9 @@ input[type="search"] {
 // todo: needed?
 output {
   display: inline-block;
-//  font-size: $font-size-base;
-//  line-height: $line-height;
-//  color: $input-color;
+  //  font-size: $font-size-base;
+  //  line-height: $line-height;
+  //  color: $input-color;
 }
 
 // Always hide an element with the `hidden` HTML attribute (from PureCSS).

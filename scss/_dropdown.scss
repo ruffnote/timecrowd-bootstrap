@@ -5,17 +5,33 @@
 }
 
 .dropdown-toggle {
+  align-items: center;
+  display: flex;
+  padding-left: 1.2rem;
+  padding-right: 3rem !important;
+  position: relative;
+  text-align: left;
+  @include text-overflow();
+
   // Generate the caret automatically
-  &::after {
+  &:after {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSI5MnB4IiBoZWlnaHQ9IjkycHgiIHZpZXdCb3g9IjAgMCA5MiA5MiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOTIgOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggaWQ9IlhNTElEXzQ2N18iIGQ9Ik00Niw2M2MtMS4xLDAtMi4xLTAuNC0yLjktMS4ybC0yNS0yNmMtMS41LTEuNi0xLjUtNC4xLDAuMS01LjdjMS42LTEuNSw0LjEtMS41LDUuNywwLjFsMjIuMSwyM2wyMi4xLTIzDQoJYzEuNS0xLjYsNC4xLTEuNiw1LjctMC4xYzEuNiwxLjUsMS42LDQuMSwwLjEsNS43bC0yNSwyNkM0OC4xLDYyLjYsNDcuMSw2Myw0Niw2M3oiLz4NCjwvc3ZnPg0K");
+    background-size: cover;
     display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: $caret-width;
-    vertical-align: middle;
-    content: "";
-    border-top: $caret-width solid;
-    border-right: $caret-width solid transparent;
-    border-left: $caret-width solid transparent;
+    opacity: .5;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1rem;
+    margin: auto;
+    content: " ";
+  }
+
+  &:hover &:after {
+    opacity: 1;
   }
 
   // Prevent the focus on the dropdown toggle when closing dropdowns
@@ -41,7 +57,10 @@
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
   float: left;
+  max-height: $dropdown-max-height;
   min-width: $dropdown-min-width;
+  max-width: $dropdown-max-width;
+  overflow-y: auto;
   padding: $dropdown-padding-y 0;
   margin: $dropdown-margin-top 0 0; // override default ul
   font-size: $font-size-base; // Redeclare because nesting can cause inheritance issues
@@ -52,7 +71,11 @@
   background-clip: padding-box;
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($border-radius);
-  @include box-shadow($dropdown-box-shadow);
+  box-shadow: $dropdown-box-shadow;
+
+  @include media-breakpoint-down(sm) {
+    min-width: $dropdown-min-width-sm;
+  }
 }
 
 // Dividers (basically an `<hr>`) within the dropdown
@@ -64,9 +87,11 @@
 //
 // `<button>`-specific styles are denoted with `// For <button>s`
 .dropdown-item {
+  border-radius: 0;
+  cursor: pointer;
   display: block;
   width: 100%; // For `<button>`s
-  padding: $spacer-y / 4 $dropdown-item-padding-x;
+  padding: 3px $dropdown-item-padding-x;
   clear: both;
   font-weight: $font-weight-normal;
   color: $dropdown-link-color;
@@ -74,15 +99,11 @@
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background: none; // For `<button>`s
   border: 0; // For `<button>`s
-  border-bottom: $border-width solid $dropdown-bg;
 
   @include hover-focus {
     color: $dropdown-link-hover-color;
     text-decoration: none;
     background-color: $dropdown-link-hover-bg;
-  }
-
-  &:focus {
     outline: none;
   }
 
@@ -102,6 +123,10 @@
     @if $enable-gradients {
       background-image: none;
     }
+  }
+
+  .icon {
+    top: -1px;
   }
 }
 

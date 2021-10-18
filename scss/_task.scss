@@ -1,0 +1,560 @@
+.tasklist {
+  width: 100%;
+}
+
+.task {
+  background: $body-bg;
+  border-bottom: $border-width solid $border-color;
+  cursor: pointer;
+  padding: .9rem 1.2rem;
+  position: relative;
+
+  &:hover {
+    background: $component-hover-bg;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $component-active-bg;
+  }
+
+  .task-header {
+    display: flex;
+    margin: .3rem 0 .6rem 0;
+    position: relative;
+    min-width: 1em;
+    word-break: break-all;
+
+    .task-title {
+      display: flex;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-sm;
+      max-height: $spacer * 3;
+      overflow: hidden;
+      position: relative;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  .task-icon {
+    font-size: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin-right: .9rem;
+    vertical-align: top;
+    position: relative;
+    top: -1px;
+    transition: $transition-base;
+  }
+
+  .task-icon-start {
+    color: $choco;
+  }
+
+  &:hover .task-icon-start {
+    color: $brand-primary;
+  }
+
+  .task-icon-stop {
+    color: $brand-danger;
+  }
+
+  .task-block {
+    color: $text-muted;
+    display: flex;
+    font-size: $font-size-sm;
+  }
+
+  .task-category {
+    display: flex;
+    margin: 0 .6rem 0 .3rem;
+    min-width: 180px;
+    align-items: center;
+    @include text-overflow();
+
+    .category-circle {
+      margin-right: 1.2rem;
+    }
+
+    .task-category-title {
+      @include text-overflow();
+    }
+
+    .task-category-team {
+      margin-left: $spacer / 2;
+      white-space: nowrap;
+    }
+  }
+
+  .task-duration {
+    font-weight: $font-weight-bold;
+    margin-left: auto;
+    min-width: $spacer * 6.5;
+    white-space: nowrap;
+
+    .icon {
+      margin-right: .3rem;
+    }
+  }
+
+  &.logging .task-duration {
+    color: $body-color;
+  }
+
+  .task-controls {
+    background: transparent;
+    display: none;
+    position: absolute;
+    bottom: .9rem;
+    right: .9rem;
+  }
+
+  &:hover .task-controls {
+    display: flex;
+  }
+}
+
+.task.complete {
+  .task-title {
+    color: $text-muted;
+    text-decoration: line-through;
+  }
+
+  .task-icon {
+    color: $text-muted;
+  }
+}
+
+.teamlist {
+  padding-bottom: 1.2rem;
+
+  &:first-of-type .section-header {
+    border-top: 0;
+  }
+}
+
+.task-title {
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
+}
+
+.task-meta {
+  display: flex;
+  padding: 0 1.2rem;
+}
+
+.task-category {
+  color: $text-muted;
+  font-size: $font-size-sm;
+}
+
+.task-times {
+  color: $text-muted;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  margin-left: auto;
+}
+
+.task-controls {
+  display: none;
+  position: absolute;
+  right: .9rem;
+  bottom: .9rem;
+}
+
+.task:hover {
+  .task-controls {
+    display: flex;
+  }
+}
+
+.task-inline {
+  padding: 0;
+
+  .task-title {
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base;
+    max-height: $line-height-base * 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .task-block {
+    display: flex;
+    flex-wrap: nowrap;
+    line-height: $line-height-base;
+    max-width: 960px;
+    width: 100%;
+  }
+
+  .task-meta {
+    align-items: center;
+    display: flex;
+    min-width: 180px;
+    margin-left: auto;
+    margin-top: 0;
+    padding-left: $spacer * 2;
+    padding-right: 0;
+    width: 180px;
+
+    @include media-breakpoint-down(sm) {
+      min-width: auto;
+    }
+  }
+
+  .task-category {
+    max-width: 180px;
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.task-suggestion {
+  .task-inline {
+    .task-block {
+      flex-wrap: wrap;
+    }
+    .task-meta {
+      padding-left: 0;
+      min-width: auto;
+      width: auto;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0.8rem 0;
+  }
+}
+
+.task-member {
+  align-items: center;
+  color: $body-color;
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  .task-icon-member {
+    background: $white;
+    border-radius: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    transition: $transition-base;
+  }
+
+  .task-member-avatar {}
+
+  .task-member-nickname {
+    color: $secondary-link-color;
+    max-width: 16rem;
+
+    @include text-overflow();
+
+    @include media-breakpoint-down(sm) {
+      max-width: calc(100% - 8.4rem);
+    }
+  }
+
+  .task-member-duration {
+    align-items: center;
+    display: flex;
+    width: 8.4rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+  }
+
+  .counter {
+    font-weight: $font-weight-bold;
+  }
+
+  &:hover {
+    .task-icon-member {
+      opacity: 1;
+    }
+  }
+}
+
+.task-form {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-modal;
+  max-width: 1200px;
+  position: relative;
+  transition: $transition-base;
+  width: 100%;
+  z-index: $zindex-modal;
+
+  .task-form-body {
+    display: flex;
+    width: 100%;
+  }
+
+  .task-form-title {
+    border: 0;
+    border-bottom: 0;
+    border-radius: $border-radius;
+    font-weight: bold;
+    line-height: $line-height-sm;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    resize: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .task-form-controls {
+    display: flex;
+    padding: .6rem;
+  }
+
+  .task-form-attrs {
+    background: $white;
+    border-bottom: 0;
+    margin-bottom: 0;
+    border-radius: 1.8rem;
+    padding: 0;
+    position: relative;
+    z-index: 1000;
+
+    .nav-link {
+      align-items: center;
+      border: 0;
+      border-radius: 1.8rem;
+      color: $secondary-link-color;
+      cursor: pointer;
+      display: flex;
+      overflow: hidden;
+      margin: .6rem 0 .6rem .6rem;
+      padding: .6rem 1.2rem;
+      text-overflow: ellipsis;
+      top: 0;
+      white-space: nowrap;
+      width: 216px;
+
+      &:hover {
+        background: $component-active-bg;
+      }
+
+      &.active {
+        background: $white;
+        font-weight: $font-weight-base;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+      }
+
+      .icon {
+        top: 0;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  .tab-content {
+    padding-top: 1px;
+  }
+
+  &.unselect-tabs .tab-content {
+    &:before {
+      display: none;
+    }
+
+    padding-top: 0;
+  }
+
+  .tab-pane {
+    background: $dropdown-bg;
+    max-height: 273px;
+  }
+
+  &.unselect-tabs .tab-content {
+    border-top: 0;
+  }
+
+  .tab-pane.active {
+    animation: slideInDownSmall .16s ease-out;
+  }
+
+  @keyframes slideInDownSmall {
+    0% {
+      transform: translate3d(0, -4.8rem, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.quick-task {
+  background: $gray-light;
+  margin: 0 auto;
+  padding: .3rem;
+
+  .task-edit {
+    border: 1px solid $separator-color;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+}
+
+.task-form {
+  .task-edit {
+    background: #fff;
+    display: flex;
+    font-size: 14px;
+    max-width: 1200px;
+    position: relative;
+    transition: all .16s ease;
+    width: 100%;
+    z-index: $zindex-modal;
+
+    .btn-primary {
+      min-width: 60px;
+    }
+
+    .task-edit-preview {
+      background: $white;
+      border-bottom: 0;
+      padding: .6rem 1.2rem;
+    }
+
+    .task-edit-title {
+      border: 0;
+      border-bottom: 0;
+      border-radius: 0;
+      font-weight: bold;
+      line-height: 1.8rem;
+      padding: 0;
+      resize: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .task-edit-tabs {
+      background: $white;
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      position: relative;
+      z-index: 1000;
+
+      .nav-link {
+        border: 0;
+        color: $secondary-link-color;
+        cursor: pointer;
+        overflow: hidden;
+        padding: .6rem 1.2rem;
+        text-overflow: ellipsis;
+        top: 0;
+        white-space: nowrap;
+        width: 216px;
+
+        &:hover {
+          background: $component-active-bg;
+        }
+
+        &.active {
+          background: $white;
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin-left: 0 !important;
+        }
+      }
+
+      .temp__nav-link-preview {
+        color: $secondary-link-color;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.add-time-entry-wrapper {
+  min-height: 3.6rem;
+
+  @include media-breakpoint-down(md) {
+    min-height: 4.4rem;
+  }
+}
+
+.task-edit-title {
+ border: 0;
+ font-weight: $font-weight-bold;
+ resize: none;
+
+ &:focus {
+   border: 0;
+   box-shadow: none;
+ }
+
+ &:disabled {
+   background: $white;
+   color: $secondary-link-color;
+ }
+}
+
+.timeline .task-edit {
+ min-width: 50.4rem;
+ width: calc(100% - 1.2rem);
+ z-index: $zindex-inner-fixed;
+
+ @include media-breakpoint-down(sm) {
+   min-width: inherit;
+   width: calc(100% - 4.2rem);
+ }
+}
+
+.timeline-item .task-edit {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.open-timeline-task-form .task-edit {
+  @include is-mobile-app {
+    position: fixed;
+    z-index: $zindex-modal;
+  }
+}
+
+.task-edit {
+  @include is-mobile-app {
+    border-radius: $border-radius $border-radius 0 0;
+    height: 62%;
+    max-height: 62%;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}

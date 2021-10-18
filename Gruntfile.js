@@ -229,6 +229,9 @@ module.exports = function (grunt) {
       sass: {
         command: 'npm run sass'
       },
+      'install-sass': {
+        command: 'yarn run install-sass'
+      },
       'sass-docs': {
         command: 'npm run sass-docs'
       },

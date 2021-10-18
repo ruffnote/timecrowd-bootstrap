@@ -1,0 +1,50 @@
+@mixin is-mobile {
+  @at-root {
+    .is-mobile & {
+      @content;
+    }
+  }
+}
+
+@mixin is-app {
+  @at-root {
+    .is-app & {
+      @content;
+    }
+  }
+}
+
+@mixin is-mobile-app {
+  @at-root {
+    .is-app &,
+    .is-mobile & {
+      @content;
+    }
+  }
+}
+
+
+@mixin is-crx {
+  @at-root {
+    .is-crx & {
+      @content;
+    }
+  }
+}
+
+@mixin is-pc {
+  @at-root {
+    .is-pc & {
+      @content;
+    }
+  }
+}
+
+@mixin is-crx-pc {
+  @at-root {
+    .is-crx &,
+    .is-pc & {
+      @content;
+    }
+  }
+}

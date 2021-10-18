@@ -12,22 +12,31 @@
 .custom-control {
   position: relative;
   display: inline-flex;
-  min-height: $line-height-base;
+  margin-bottom: 0;
+  min-height: (1 * $line-height-base);
   padding-left: $custom-control-gutter;
   margin-right: $custom-control-spacer-x;
   cursor: pointer;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base-mobile;
+  }
+}
+
+.touch-device .custom-control {
+  padding-left: $custom-control-gutter-touch;
+}
+
+.custom-control.checked .custom-control-indicator {
+  color: $custom-control-checked-indicator-color;
+  background-color: $custom-control-checked-indicator-bg;
+  @include box-shadow($custom-control-checked-indicator-box-shadow);
 }
 
 .custom-control-input {
   position: absolute;
   z-index: -1; // Put the input behind the label so it doesn't overlay text
   opacity: 0;
-
-  &:checked ~ .custom-control-indicator {
-    color: $custom-control-checked-indicator-color;
-    background-color: $custom-control-checked-indicator-bg;
-    @include box-shadow($custom-control-checked-indicator-box-shadow);
-  }
 
   &:focus ~ .custom-control-indicator {
     // the mixin is not used here to make sure there is feedback
@@ -44,6 +53,7 @@
     ~ .custom-control-indicator {
       cursor: $custom-control-disabled-cursor;
       background-color: $custom-control-disabled-indicator-bg;
+      border: $custom-control-disabled-indicator-border;
     }
 
     ~ .custom-control-description {
@@ -58,8 +68,9 @@
 // Generates a shadow element to create our makeshift checkbox/radio background.
 
 .custom-control-indicator {
+  border: $custom-control-indicator-border;
   position: absolute;
-  top: $spacer / 4;
+  top: (($line-height-base - $custom-control-indicator-size) / 2) - .05;
   left: 0;
   display: block;
   width: $custom-control-indicator-size;
@@ -70,7 +81,14 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: $custom-control-indicator-bg-size;
+  transition: $transition-base;
   @include box-shadow($custom-control-indicator-box-shadow);
+}
+
+.touch-device .custom-control-indicator {
+  top: (($line-height-base - $custom-control-indicator-size-touch) / 2);
+  width: $custom-control-indicator-size-touch;
+  height: $custom-control-indicator-size-touch;
 }
 
 // Checkboxes
@@ -79,18 +97,47 @@
 
 .custom-checkbox {
   .custom-control-indicator {
+    transition: $transition-base;
     @include border-radius($custom-checkbox-radius);
   }
 
-  .custom-control-input:checked ~ .custom-control-indicator {
-    background-image: $custom-checkbox-checked-icon;
+  &:active {
+    .custom-control-indicator {
+      transform: scale(.9);
+    }
   }
 
-  .custom-control-input:indeterminate ~ .custom-control-indicator {
+  &.checked .custom-control-indicator {
+    background-image: $custom-checkbox-checked-icon;
+    background-size: 80%;
+    border: $custom-control-checked-indicator-border;
+  }
+
+  .custom-control-input:checked:disabled ~ .custom-control-indicator,
+  &.checked.disabled .custom-control-indicator {
+    border: $custom-control-disabled-indicator-border;
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-indicator,
+  &.indeterminate .custom-control-indicator {
     background-color: $custom-checkbox-indeterminate-bg;
     background-image: $custom-checkbox-indeterminate-icon;
+    background-size: 66% 50%;
+    border: $custom-control-checked-indicator-border;
     @include box-shadow($custom-checkbox-indeterminate-box-shadow);
   }
+
+  .custom-control-description {
+    user-select: none;
+  }
+
+  .custom-control-input:checked ~ .custom-control-indicator + .custom-control-description {
+    color: inherit;
+  }
+}
+
+.touch-device .custom-control-input:indeterminate ~ .custom-control-indicator {
+  background-size: 66% 50%;
 }
 
 // Radios
@@ -99,11 +146,36 @@
 
 .custom-radio {
   .custom-control-indicator {
+    transition: $transition-base;
+    background-size: 66%;
     border-radius: $custom-radio-radius;
   }
 
-  .custom-control-input:checked ~ .custom-control-indicator {
+  &:active {
+    .custom-control-indicator {
+      transform: scale(.9);
+    }
+  }
+
+  &.checked .custom-control-indicator {
+    background-color: $custom-control-checked-indicator-bg;
     background-image: $custom-radio-checked-icon;
+    border: $custom-control-checked-indicator-border;
+  }
+
+  .custom-control-input:checked:disabled ~ .custom-control-indicator,
+  &.checked.disabled .custom-control-indicator {
+    border: $custom-control-disabled-indicator-border;
+  }
+
+  .custom-control-description {
+    user-select: none;
+  }
+}
+
+.touch-device .custom-radio {
+  .custom-control-indicator {
+    background-size: 60%;
   }
 }
 

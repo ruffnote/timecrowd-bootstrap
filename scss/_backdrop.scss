@@ -1,0 +1,15 @@
+.backdrop {
+  animation: fadeIn $transition-time-base ease;
+  background: rgba($black, .75);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $zindex-modal-backdrop;
+}
+
+.backdrop-transparent {
+  background: transparent;
+  z-index: $zindex-modal-backdrop !important;
+}

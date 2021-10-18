@@ -1,0 +1,43 @@
+.helplink {
+  color: $link-color;
+  cursor: pointer;
+  margin: 0 .6rem;
+  transition: $transition-base;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+
+    .helplink-title {
+      text-decoration: underline;
+    }
+  }
+
+  .icon {
+    top: -1px;
+  }
+
+  &.helplink-secondary {
+    color: $secondary-link-color;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  &.helplink-info {
+    color: $brand-info;
+  }
+
+  &.helplink-warning {
+    color: $brand-warning;
+  }
+
+  &.helplink-danger {
+    color: $brand-danger;
+  }
+
+  &.inverse {
+    color: $white;
+  }
+}

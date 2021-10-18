@@ -1,0 +1,19 @@
+.form-nav {
+  border-bottom: $border-width solid $border-color;
+  display: flex;
+  padding-bottom: 1.8rem;
+  margin-bottom: $spacer-y * 3;
+  width: 100%;
+}
+
+.form-title {
+  color: $choco;
+  font-size: $font-size-lg;
+  font-weight: 300;
+  line-height: 3.6rem;
+  @include text-overflow();
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base-mobile;
+  }
+}

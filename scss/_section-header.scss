@@ -1,0 +1,27 @@
+.section-header {
+  border-top: 1px solid $border-color;
+  align-items: center;
+  color: $secondary-link-color;
+  font-size: $font-size-sm;
+  display: flex;
+  padding: .9rem 1.5rem;
+}
+
+.section-header-title {
+  display: flex;
+  font-weight: $font-weight-bold;
+  align-items: center;
+}
+
+.section-header-controls {
+  .btn-icon {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+  .btn {
+    height: 4.2rem;
+  }
+  .dropdown {
+    display: inline-block;
+  }
+}

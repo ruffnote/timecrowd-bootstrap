@@ -1,0 +1,37 @@
+@mixin pseudo-border($position, $color, $size) {
+  &:before {
+    background: $color;
+    content: " ";
+    display: block;
+    margin: auto;
+    position: absolute;
+    @if $position == top {
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $border-width;
+      width: $size;
+    }
+    @if $position == bottom {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: $border-width;
+      width: $size;
+    }
+    @if $position == left {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: $size;
+      width: $border-width;
+    }
+    @if $position == right {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      height: $size;
+      width: $border-width;
+    }
+  }
+}

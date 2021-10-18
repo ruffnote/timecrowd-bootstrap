@@ -1,0 +1,36 @@
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+@mixin text-overflow-multiline($bottom, $color) {
+  overflow: hidden;
+  position: relative;
+  word-break: break-all;
+
+  &:before,
+  &:after{
+    position: absolute;
+  }
+
+  &:before{
+    content: "...";
+    background: $color;
+    display: block;
+    right: 0;
+    text-align: center;
+    width: 1em;
+    bottom: $bottom;
+  }
+
+  &:after {
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background: 0;
+    z-index: 2;
+    background: $color;
+  }
+}

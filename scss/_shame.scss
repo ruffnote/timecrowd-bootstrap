@@ -1,0 +1,371 @@
+/* FIXME: 一時的なものをここに記載 */
+
+.border-top-1 {
+  border-top: 1px solid #ececec;
+}
+
+/* TODO: Conditionalsをつくる？ */
+
+.open-timeline-task-form {
+  @include is-mobile-app {
+    max-height: 100vh;
+    overflow: hidden;
+    margin-top: 0 !important;
+
+    // FIXME: (React16で)TaskFormのz-index問題を解決するまでは背景にあるコンポーネントの表示を行わない
+
+    .date-header {
+      display: none;
+    }
+
+    .toolbar {
+      display: none;
+    }
+
+    .timeline {
+      margin-top: 0;
+    }
+  }
+}
+
+/* TODO: .section-headerに置き換える */
+
+.datebar {
+  background: $gray-lighter;
+  border-bottom: $border-width solid $border-color;
+  border-top: $border-width solid $border-color;
+  display: flex;
+  margin-top: -1px;
+  position: relative;
+
+  .datebar-day {
+    color: $secondary-link-color;
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    padding: .6rem 1.2rem;
+  }
+
+  .datebar-times {
+    color: $secondary-link-color;
+    font-size: $font-size-sm;
+    margin-left: auto;
+    padding: .6rem 1.2rem;
+  }
+}
+
+/* FIXME: レポート条件変更まで一時的 */
+
+.report-toolbar {
+  .btn-group {
+    .btn-group {
+      width: 100%;
+
+      .dropdown-toggle {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .btn-group {
+      display: block;
+
+      .btn-group {
+        display: block;
+        float: left;
+        width: calc(33.333% - 13px);
+
+        .dropdown-toggle {
+          font-size: 1.15rem;
+          overflow: hidden;
+          width: 100%;
+        }
+      }
+
+      .btn-group-last {
+        display: block;
+        float: left;
+      }
+    }
+  }
+}
+
+/* FIXME: タスク編集画面を整える */
+
+.task-edit-tab-content {
+  background: $dropdown-bg;
+  border-radius: 0 0 $border-radius $border-radius;
+  height: 100%;
+  transition: $transition-base;
+
+  .tab-pane {
+    height: 100%;
+    overflow: visible;
+    border-top: $border-width solid $separator-color;
+  }
+}
+
+.unselect-tabs .task-edit-tab-content {
+  @include is-mobile-app() {
+    border-top: $border-width solid $separator-color;
+  }
+}
+
+.open-suggestion .task-edit-tab-content {
+  @include is-mobile-app() {
+    border-top: 0;
+  }
+}
+
+.arrow-block-up {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMjQgNiI+PHBhdGggZD0iTTI0LDUuOTU4MzNIMTJWLjVDMTYuNjU2MjkuNSwxOCw1Ljk1ODMzLDI0LDUuOTU4MzNaIiBmaWxsPSIjZmJmYmZiIi8+PHBhdGggZD0iTTEyLC41YzUuNTMxMjUsMCw1LjExNDU4LDUuMDAzNDcsOS43ODEyNSw1LjAwMzMxQzI0LDUuNTAzMjMsMjQsNS41MDM0NywyNCw1LjUwMzQ3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNmQ2ZDYiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjxwYXRoIGQ9Ik0wLDUuOTU4MzNIMTJWLjVDNy4zNDM3OS41LDYsNS45NTgzMywwLDUuOTU4MzNaIiBmaWxsPSIjZmJmYmZiIi8+PHBhdGggZD0iTTEyLC41QzYuNDY4NzkuNSw2Ljg4NTQ1LDUuNTAzNDcsMi4yMTg3OSw1LjUwMzMxLDAsNS41MDMyMywwLDUuNTAzNDcsMCw1LjUwMzQ3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNmQ2ZDYiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg==");
+  background-size: contain;
+  height: .6rem;
+  width: 2.4rem;
+  position: absolute;
+  bottom: -.7rem;
+  left: 2.4rem;
+
+  animation: arrowUp .16s ease-out;
+}
+
+@keyframes arrowUp {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.composer .form-inline input.form-control {
+  border: 0;
+  font-weight: $font-weight-bold;
+
+  &::placeholder-shown {
+    font-weight: $font-weight-bold;
+  }
+
+  &:focus,
+  &.focus {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.composer {
+  &.data-export-form {
+    max-height: 480px;
+
+    .data-export-form-block {
+      border-left: $border-width solid $border-color;
+      height: 430px;
+
+      &:first-of-type {
+        border-left: 0;
+      }
+    }
+
+    .data-export-form-list {
+      height: 384px;
+      overflow-y: scroll;
+    }
+
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      right: 1.2rem;
+      left: 1.2rem;
+      margin: auto;
+      width: calc(100% - 2.4rem);
+    }
+
+    @include media-breakpoint-down(sm) {
+      top: 3.6rem;
+      height: calc(100vh - 7.2rem);
+      overflow-y: scroll;
+
+      &.data-export-form {
+        max-height: none;
+
+        .data-export-form-block {
+          border-left: 0;
+          border-top: $border-width solid $border-color;
+          height: 204px;
+
+          &:first-of-type {
+            border-top: 0;
+          }
+        }
+
+        .data-export-form-list {
+          height: 160px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+
+// TODO: 下部ではなくツールバー内にトグルボタンとして用意する(PCと共用ではなくモバイル向けコントロールを用意する)
+
+.floating-nav {
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    width: 100%;
+
+    @include is-crx-pc() {
+      display: inline-flex;
+      width: auto;
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+    }
+  }
+}
+
+.quicktask {
+  @include media-breakpoint-down(sm) {
+    .quicktask-current {
+      padding-left: .6rem;
+    }
+  }
+
+  @include is-mobile-app() {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    .btn-new-task {
+      background: $white;
+      border: 0;
+      border-top: $border-width solid $separator-color;
+      border-radius: 0;
+      height: 4.8rem;
+    }
+
+    .quicktask-current-wrap {
+      background: $white;
+      border: 0;
+      border-top: $border-width solid $separator-color;
+      border-radius: 0;
+      height: 4.8rem;
+      padding-right: 1.2rem;
+      width: 100%;
+    }
+  }
+}
+
+.category-selector {
+  max-height: 273px;
+  overflow-y: scroll;
+}
+
+.list-group-suggest {
+  max-height: 273px;
+  overflow-y: scroll;
+
+  .list-group-item {
+    margin: 1.2rem 0;
+  }
+}
+
+.change-task-modal {
+  position: absolute;
+  z-index: 1051;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  width: calc(100% - 2.4rem);
+
+  .list-group-suggest {
+    height: 100%;
+  }
+
+  .change-task-modal-header {
+    padding: 1.2rem;
+    border-bottom: 1px solid $border-color;
+
+    .task-edit-title {
+      padding-left: 0.3rem;
+    }
+  }
+
+  .change-task-modal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 61px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 200px;
+    top: 0;
+  }
+}
+
+.change-task-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+  .badge-status {
+    min-width: 1.2rem;
+    max-height: 1.2rem;
+    min-height: 1.2rem;
+    max-width: 1.2rem;
+    left: .5rem;
+    top: .8rem;
+    margin: 0;
+    z-index: 1;
+    border: 2px solid #3f3535;
+    box-sizing: content-box;
+
+    .icon.tc-start {
+      left: 2px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .badge-status {
+      left: 50%;
+      top: .4rem;
+      margin-left: -1.5rem;
+
+      .icon.tc-start {
+        top: 1px;
+      }
+    }
+  }
+}
+
+.hide-member .navbar .nav-item.members {
+  display: none;
+}
+
+// Bootstrap4正式版擬似互換
+
+.btn-light {
+  border-color: $white;
+  background: $white;
+  transition: $transition-base;
+
+  &:hover {
+    background: $component-hover-bg;
+    border-color: $component-hover-bg;
+  }
+}
+
+.h3.should-remove-ensure-compatibility-design {
+  color: $gray-darker;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  padding-left: .6rem;
+}
+
+.report-padding.should-remove-ensure-compatibility-design {
+  padding: 0 1.8rem;
+}

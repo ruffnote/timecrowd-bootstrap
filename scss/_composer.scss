@@ -1,0 +1,70 @@
+.composer {
+  background: $white;
+  box-shadow: $box-shadow-modal;
+  border-radius: $border-radius;
+  overflow: visible;
+  position: absolute;
+  width: 100%;
+  z-index: $zindex-modal;
+}
+
+.composer-header {
+  border-radius: $border-radius $border-radius 0 0;
+  display: flex;
+  align-items: center; // vertically center it
+  justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.composer-footer {
+  background: $gray-lighter;
+  border-radius: 0 0 $border-radius $border-radius;
+  display: flex;
+  align-items: center; // vertically center
+  justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
+  padding: $modal-inner-padding;
+  border-top: $modal-footer-border-width solid $modal-footer-border-color;
+  width: 100%;
+}
+
+.composer-options {
+  display: flex;
+}
+
+.composer-option-toggle {
+  align-items: center;
+  border-radius: 1.8rem;
+  color: $secondary-link-color;
+  display: flex;
+  font-size: $font-size-sm;
+  padding: .6rem 1.2rem;
+  position: relative;
+  user-select: none;
+  width: 216px;
+  z-index: 10;
+
+  &:hover {
+    background: $component-hover-bg;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $component-active-bg;
+  }
+
+  &.active {
+    background: transparent;
+  }
+}
+
+.toolbar .composer {
+  max-width: 1080px;
+
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+    margin-top: -.9rem;
+    left: 0;
+  }
+}

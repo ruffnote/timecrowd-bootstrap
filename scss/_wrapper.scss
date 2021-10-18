@@ -1,0 +1,86 @@
+.content-wrap {
+  display: flex;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}
+
+.content {}
+
+.content.freeze-scroll {
+  @include media-breakpoint-down(sm) {
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.content-main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 21.6rem;
+    width: calc(100% - 21.6rem);
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 6rem;
+  }
+
+  @include is-crx() {
+    padding-bottom: 0;
+  }
+}
+
+.with-toolbar {
+  height: 100%;
+  padding-top: 6rem;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    min-height: calc(100vh - 6rem);
+  }
+}
+
+.with-toolbar-only-pc {
+  @include is-mobile-app {
+    padding-top: 0;
+  }
+}
+
+.with-toolbar-only-sm-up {
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+  }
+}
+
+.with-bottom-bar-only-mobile-app {
+  @include is-mobile-app {
+    padding-bottom: 4.8rem;
+  }
+}
+
+.with-form-nav {
+  position: relative;
+}
+
+.setting-container {
+  padding: 2.4rem 4.8rem;
+
+  @include media-breakpoint-down(sm) {
+    padding: 1.8rem 1.2rem;
+  }
+}
+
+.export {
+  @include media-breakpoint-up(xl) {
+    .modal-wrapper {
+      min-width: 760px;
+    }
+  }
+}

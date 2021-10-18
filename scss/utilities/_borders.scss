@@ -8,6 +8,8 @@
 .border-bottom-0 { border-bottom: 0 !important; }
 .border-left-0   { border-left: 0 !important; }
 
+.border-bottom-1 { border-bottom: $border-width solid $border-color; }
+
 //
 // Border-radius
 //
@@ -36,14 +38,12 @@
   border-radius: 0;
 }
 
-.border-color-separator {
-  border-color: $separator-color !important;
+.rounded-right-0 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-.border-color-normal {
-  border-color: $border-color;
-}
-
-.border-color-inverse {
-  border-color: $body-bg-secondary;
+.rounded-left-0 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

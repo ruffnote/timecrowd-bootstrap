@@ -5,13 +5,20 @@
 //
 
 .form-control {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   // // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  height: $input-height;
+  // height: $input-height;
   padding: $input-padding-y $input-padding-x;
   font-size: $font-size-base;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base-mobile;
+  }
+
   line-height: $input-line-height;
+  //margin-bottom: 1px;
   color: $input-color;
   background-color: $input-bg;
   // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
@@ -81,10 +88,6 @@ select.form-control {
   }
 }
 
-textarea.form-control {
-  height: auto;
-}
-
 // Make file inputs better match text inputs by forcing them to new lines.
 .form-control-file,
 .form-control-range {
@@ -99,11 +102,11 @@ textarea.form-control {
 // For use with horizontal and inline forms, when you need the label text to
 // align with the form controls.
 .col-form-label {
-  font-weight: $font-weight-bold;
-  color: $gray-dim;
-  line-height: $line-height-sm;
-  padding-top: calc(#{$input-padding-y * 2} - #{$input-btn-border-width} * 2);
-  padding-bottom: calc(#{$input-padding-y * 2} - #{$input-btn-border-width} * 2);
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  line-height: 3rem;
+  padding-top: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
   margin-bottom: 0; // Override the `<label>` default
 }
 
@@ -131,8 +134,6 @@ textarea.form-control {
   padding-bottom: $input-padding-y;
   margin-bottom: 0;
   font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-  color: $gray-dim;
 }
 
 
@@ -232,11 +233,9 @@ select.form-control-lg {
   position: absolute;
   margin-top: $form-check-input-margin-y;
   margin-left: -$form-check-input-gutter;
-  margin-right: $form-check-input-margin-x;
-  top: -1px;
 
   &:only-child {
-    position: relative;
+    position: static;
   }
 }
 
@@ -259,16 +258,20 @@ select.form-control-lg {
 // Apply contextual and semantic states to individual form controls.
 
 .form-control-feedback {
+  background-repeat: no-repeat;
+  background-position: left .6rem;
+  background-size: 1.2rem 1.2rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-sm;
   margin-top: $form-feedback-margin-top;
+  padding: .3rem 0 .3rem 1.8rem;
 }
 
 .form-control-success,
 .form-control-warning,
 .form-control-danger {
   padding-right: ($input-padding-x * 3);
-  background-repeat: no-repeat;
-  background-position: center right ($input-height / 4);
-  background-size: ($input-height / 2) ($input-height / 2);
 }
 
 // Form validation states
@@ -276,6 +279,13 @@ select.form-control-lg {
   @include form-control-validation($brand-success);
 
   .form-control-success {
+    &:focus {
+      background-color: $body-bg;
+      color: $body-color;
+    }
+  }
+
+  .form-control-feedback {
     background-image: $form-icon-success;
   }
 }
@@ -284,6 +294,13 @@ select.form-control-lg {
   @include form-control-validation($brand-warning);
 
   .form-control-warning {
+    &:focus {
+      background-color: $body-bg;
+      color: $body-color;
+    }
+  }
+
+  .form-control-feedback {
     background-image: $form-icon-warning;
   }
 }
@@ -292,6 +309,13 @@ select.form-control-lg {
   @include form-control-validation($brand-danger);
 
   .form-control-danger {
+    &:focus {
+      background-color: $body-bg;
+      color: $body-color;
+    }
+  }
+
+  .form-control-feedback {
     background-image: $form-icon-danger;
   }
 }
@@ -308,14 +332,15 @@ select.form-control-lg {
 
 .form-inline {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center; // Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
 
   // Because we use flex, the initial sizing of checkboxes is collapsed and
   // doesn't occupy the full-width (which is what we want for xs grid tier),
   // so we force that here.
   .form-check {
-    width: 100%;
+    margin-right: $spacer;
+    width: auto;
   }
 
   // Kick in the inline
@@ -339,7 +364,7 @@ select.form-control-lg {
     // Allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      width: 100%; // Prevent labels from stacking above inputs in `.form-group`
       vertical-align: middle;
     }
 
@@ -396,4 +421,19 @@ select.form-control-lg {
       top: 0;
     }
   }
+}
+
+.form-section-header {
+  color: $secondary-link-color;
+  display: flex;
+  font-weight: $font-weight-medium;
+  padding: .9rem 1.2rem;
+  align-items: center;
+}
+
+// For hidden input file
+.hidden-file-input {
+  position: absolute;
+  top: -9999px;
+  left: 0;
 }

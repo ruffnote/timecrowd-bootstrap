@@ -1,0 +1,28 @@
+.btn-toggler {
+  background: $white;
+  border: 0;
+  border-radius: 50%;
+  color: $secondary-link-color;
+  height: 3.6rem;
+  min-height: 3.6rem;
+  transition: $transition-base;
+  min-width: 3.6rem;
+  width: 3.6rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn-sm {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+
+
+.subpane-toggler {
+  position: fixed;
+  top: 13.2rem;
+  right: 1.2rem;
+}

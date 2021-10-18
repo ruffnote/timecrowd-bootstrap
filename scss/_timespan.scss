@@ -1,0 +1,139 @@
+.timespan {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  .timespan-datetime-input {
+    width: 16.8rem;
+
+    @include media-breakpoint-down(sm) {
+      width: 50%;
+    }
+  }
+
+  .timespan-start {
+    @include media-breakpoint-down(sm) {
+      margin-right: .3rem;
+    }
+  }
+
+  .timespan-stop {
+    @include media-breakpoint-down(sm) {
+      margin-left: .3rem;
+    }
+  }
+
+  .date-dropdown {
+    &:after {
+      background: $border-color;
+      content: " ";
+      display: block;
+      position: absolute;
+      top: .6rem;
+      right: 0;
+      height: 2.4rem;
+      width: 1px;
+      z-index: 2;
+    }
+  }
+
+  .date-input {
+    background: $white;
+    border-radius: $border-radius 0 0 $border-radius;
+    border-right: 0;
+    cursor: pointer;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-xs;
+    flex: 0;
+    text-align: center;
+    width: 8.4rem;
+
+    &:hover {
+      background: $component-hover-bg;
+      border-color: $separator-color;
+    }
+
+    &.form-control-danger:hover {
+      border-color: $brand-danger;
+    }
+  }
+
+  .time-input {
+    border-left: 0;
+    font-weight: $font-weight-bold;
+    flex-grow: 0;
+    position: relative;
+    text-align: left;
+    width: 8.4rem;
+
+    @include media-breakpoint-down(sm) {
+      flex-grow: 1;
+      width: 100%;
+    }
+  }
+}
+
+.timespan-duration {
+  color: $secondary-link-color;
+  font-size: $font-size-sm;
+  line-height: 3.6rem;
+  text-align: center;
+  transition: $transition-base;
+  padding: 0 1.2rem;
+  position: relative;
+  min-width: 10.2rem;
+
+  @include media-breakpoint-up(sm) {
+    &:before {
+      background: $separator-color;
+      content: " ";
+      display: block;
+      height: 1px;
+      position: absolute;
+      top: calc(50% - 1px);
+      left: .6rem;
+      width: .6rem;
+    }
+
+    &:after {
+      background: $separator-color;
+      content: " ";
+      display: block;
+      height: 1px;
+      position: absolute;
+      top: calc(50% - 1px);
+      right: .6rem;
+      width: .6rem;
+    }
+  }
+
+  .duration {
+    padding: .3rem .6rem;
+    border-radius: 1.2rem;
+  }
+
+  &.timespan-duration-danger {
+    .duration {
+      background: $brand-danger;
+      color: $white;
+    }
+
+    &:before,
+    &:after {
+      background: $brand-danger;
+    }
+  }
+}
+
+.timespan-form {
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    display: block;
+  }
+}
+
+.timespan-form-controls {
+  @include media-breakpoint-down(sm) {
+    margin-top: 1.2rem;
+  }
+}

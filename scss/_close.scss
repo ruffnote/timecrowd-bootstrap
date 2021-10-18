@@ -2,16 +2,25 @@
   float: right;
   font-size: $close-font-size;
   font-weight: $close-font-weight;
-  line-height: 1;
+  line-height: 3.6rem;
   color: $close-color;
   text-shadow: $close-text-shadow;
+  transition: $transition-base;
+  outline: 0;
   opacity: .5;
+  width: 3.6rem;
 
   @include hover-focus {
     color: $close-color;
     text-decoration: none;
     cursor: pointer;
+    outline: 0;
     opacity: .75;
+    outline: none;
+  }
+
+  .icon.icon-lg {
+    top: -2px;
   }
 }
 

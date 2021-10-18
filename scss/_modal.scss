@@ -29,9 +29,10 @@
   // When fading in the modal, animate it to slide down
   &.fade .modal-dialog {
     @include transition($modal-transition);
-    transform: translate(0, -25%);
   }
-  &.show .modal-dialog { transform: translate(0, 0); }
+  &.show .modal-dialog {
+    animation: fadeInUpSmall $transition-time-lg ease-out;
+  }
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -53,7 +54,7 @@
   background-color: $modal-content-bg;
   background-clip: padding-box;
   border: $modal-content-border-width solid $modal-content-border-color;
-  @include border-radius($border-radius-lg);
+  @include border-radius($border-radius);
   @include box-shadow($modal-content-xs-box-shadow);
   // Remove focus outline from opened modal
   outline: 0;
@@ -81,13 +82,27 @@
   align-items: center; // vertically center it
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
   padding: $modal-header-padding;
+  position: relative;
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
+
+  .close {
+    font-size: 2.4rem;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+
+    .icon {
+      top: -2px;
+    }
+  }
 }
 
 // Title text within header
 .modal-title {
+  color: $choco-light;
   margin-bottom: 0;
   line-height: $modal-title-line-height;
+  padding-left: .6rem;
 }
 
 // Modal body
@@ -97,11 +112,13 @@
   // Enable `flex-grow: 1` so that the body take up as much space as possible
   // when should there be a fixed height on `.modal-dialog`.
   flex: 1 1 auto;
-  padding: $modal-inner-padding;
+  padding: $modal-body-padding;
 }
 
 // Footer (for actions)
 .modal-footer {
+  background: $gray-lighter;
+  border-radius: 0 0 .5rem .5rem;
   display: flex;
   align-items: center; // vertically center
   justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
@@ -109,8 +126,8 @@
   border-top: $modal-footer-border-width solid $modal-footer-border-color;
 
   // Easily place margin between footer elements
-  > :not(:first-child) { margin-left: .25rem; }
-  > :not(:last-child) { margin-right: .25rem; }
+  > :not(:first-child) { margin-left: .3rem; }
+  > :not(:last-child) { margin-right: .3rem; }
 }
 
 // Measure scrollbar width for padding body during modal show/hide

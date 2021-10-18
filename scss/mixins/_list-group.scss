@@ -17,7 +17,6 @@
     @include hover-focus {
       color: $color;
       background-color: darken($background, 5%);
-      outline: none;
     }
 
     &.active {
